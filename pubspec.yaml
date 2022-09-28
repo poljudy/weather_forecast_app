@@ -1,0 +1,24 @@
+name: open_weather_api
+description: This project helps in accessing the service [https://openweathermap.org/]
+version: 0.0.1
+#homepage:
+
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  http: ^0.13.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  lint: ^1.10.0
+
+flutter:
+   assets:
+    - assets/weather_icons/
+    - assets/example_response_json/
