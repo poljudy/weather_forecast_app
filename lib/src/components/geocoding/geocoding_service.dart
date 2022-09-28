@@ -12,8 +12,8 @@ import 'place_geocode_model.dart';
 /// into the exact geographical coordinates;
 /// * Reverse geocoding converts the geographical coordinates into
 /// the names of the nearby locations;
-class WeatherGeocoding {
-  WeatherGeocoding(this._apiKey);
+class GeocodingService {
+  GeocodingService(this._apiKey);
 
   final http.Client _httpClient = http.Client();
 
