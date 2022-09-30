@@ -12,6 +12,8 @@ import 'place_geocode_model.dart';
 /// into the exact geographical coordinates;
 /// * Reverse geocoding converts the geographical coordinates into
 /// the names of the nearby locations;
+///
+/// Learn more [geocoding-api](https://openweathermap.org/api/geocoding-api)
 class GeocodingService {
   GeocodingService(this._apiKey);
 
@@ -149,7 +151,7 @@ class GeocodingService {
   /// * lon: longitude
   String _buildUrl(
       String tag, String? cityName, int limit, double? lat, double? lon) {
-    String url = 'http://api.openweathermap.org/geo/1.0/$tag?';
+    String url = '${ApiPaths.geocoding}$tag?';
 
     if (cityName != null) {
       url += 'q=$cityName&';
@@ -161,4 +163,10 @@ class GeocodingService {
 
     return url += 'appid=$_apiKey';
   }
+}
+
+class ApiPaths {
+  ApiPaths._();
+
+  static const String geocoding = 'https://api.openweathermap.org/geo/1.0/';
 }
