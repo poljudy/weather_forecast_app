@@ -1,4 +1,5 @@
-import '../utils/parse.dart';
+
+import '../../../utils/parse.dart';
 
 /// Model represents national weather alerts.
 ///

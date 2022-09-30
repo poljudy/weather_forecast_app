@@ -4,10 +4,11 @@ import 'dart:io';
 
 import 'package:http/http.dart' as http;
 
+import '../api/weather_api.dart';
 import '../api/weather_api_error.dart';
 
-/// Интерфейс предназначен для единых запросов и обрабтки ошибок.
-mixin Client {
+/// Интерфейс предназначен для единых запросов и обработки ошибок.
+mixin OWMClient {
   late final http.Client _httpClient;
 
   static const int _statusOk = 200;
@@ -26,22 +27,22 @@ mixin Client {
 
       switch (response.statusCode) {
         case 200:
-          final data = json.decode(response.body);
+          final dynamic data = json.decode(response.body);
           return builder(data);
         default:
           throw OwmApiException(response.statusCode, response.body);
       }
     } on SocketException catch (_) {
-      throw OwmApiException(0, 'No Internet connection');
+      throw const OwmApiException(0, 'No Internet connection');
     }
     // todo add throw TimeoutException()
   }
 
+  /// Check for a valid api key OWM.
   static Future<bool> isCorrectApi(String yourApi) async {
-    final String uri =
-        'https://api.openweathermap.org/data/2.5/weather?appid=$yourApi';
+    final Uri uri = OpenWeatherMapAPI.uriTestApikey(yourApi);
 
-    final http.Response response = await http.Client().get(Uri.parse(uri));
+    final http.Response response = await http.Client().get(uri);
 
     if (response.statusCode == _statusOk ||
         response.statusCode == _statusOkTestApi) {

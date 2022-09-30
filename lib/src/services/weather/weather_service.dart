@@ -1,11 +1,9 @@
-import 'package:open_weather_api/src/models/weather_current.dart';
-
-import '../../models/weather_one_call.dart';
 import '../../api/weather_api.dart';
 import '../i_service.dart';
+import 'all_weather_model.dart';
 
 /// Plugin for fetching weather data in JSON.
-class WeatherService with Client {
+class WeatherService with OWMClient {
   WeatherService(this._owmApi);
 
   final OpenWeatherMapAPI _owmApi;
@@ -17,7 +15,7 @@ class WeatherService with Client {
   Future<WeatherOneCall> oneCallWeatherByLocation(
           {required double latitude, required double longitude}) async =>
       getData(
-          uri: _owmApi.onecallWeather(latitude, longitude),
+          uri: _owmApi.uriOnecallWeather(latitude, longitude),
           builder: (data) {
             return WeatherOneCall.fromJson(
                 parseCurrent(data as Map<String, dynamic>));
@@ -30,7 +28,7 @@ class WeatherService with Client {
   Future<WeatherCurrent> currentWeatherByLocation(
           {required double latitude, required double longitude}) async =>
       getData(
-          uri: _owmApi.currentWeather(latitude, longitude),
+          uri: _owmApi.uriCurrentWeather(latitude, longitude),
           builder: (data) {
             return WeatherCurrent.fromJson(
                 parseCurrent(data as Map<String, dynamic>));

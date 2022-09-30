@@ -1,4 +1,4 @@
-import '../utils/parse.dart';
+import '../../../utils/parse.dart';
 
 class WeatherCurrent {
   const WeatherCurrent(

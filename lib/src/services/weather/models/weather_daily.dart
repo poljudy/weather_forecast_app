@@ -1,4 +1,4 @@
-import '../utils/parse.dart';
+import '../../../utils/parse.dart';
 
 /// Model represents daily forecast weather.
 class WeatherDaily {

@@ -1,4 +1,4 @@
-import '../utils/parse.dart';
+import '../../../utils/parse.dart';
 import 'weather_alerts.dart';
 import 'weather_current.dart';
 import 'weather_daily.dart';
