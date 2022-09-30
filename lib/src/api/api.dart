@@ -1,10 +1,13 @@
 import '../utils/languages.dart';
 
-/// Uri builder class for the OpenWeatherMap API
-class OpenWeatherMapAPI {
-  OpenWeatherMapAPI(this._apiKey, {this.language = WeatherLanguage.russian});
+/// Uri builder class for the OpenWeatherMap(OWM) API.
+class OWMApi {
+  OWMApi({
+    required this.apiKey,
+    this.language = WeatherLanguage.russian,
+  });
 
-  final String _apiKey;
+  final String apiKey;
   final WeatherLanguage language;
 
   static const String _schemeUrl = 'https';
@@ -40,7 +43,7 @@ class OpenWeatherMapAPI {
   Map<String, dynamic> _queryParametersWeather(double? lat, double? lon) => {
         'lat': lat,
         'lon': lon,
-        'appid': _apiKey,
+        'appid': apiKey,
         'lang': language.code,
         'units': 'standard',
       };
@@ -63,7 +66,7 @@ class OpenWeatherMapAPI {
       {
         'q': cityName,
         'limit': limit,
-        'appid': _apiKey,
+        'appid': apiKey,
       };
 
   Uri uriLocationByCoordinates(double lat, double lon, {int limit = 5}) =>
@@ -85,10 +88,11 @@ class OpenWeatherMapAPI {
         'lat': lat,
         'lon': lon,
         'limit': limit,
-        'appid': _apiKey,
+        'appid': apiKey,
       };
 
   //============================================================================
+  // build
 
   Uri _buildUri({
     required String path,

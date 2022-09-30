@@ -3,7 +3,9 @@ library open_weather_api;
 // ignore_for_file: directives_ordering
 
 // owm client
-export 'src/services/i_service.dart';
+export 'src/services/http_repository.dart';
+export 'src/api/api.dart';
+export 'src/api/api_error.dart';
 
 // weather service
 export 'src/services/weather/weather_service.dart';

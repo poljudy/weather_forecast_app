@@ -4,12 +4,14 @@ import 'dart:io';
 
 import 'package:http/http.dart' as http;
 
-import '../api/weather_api.dart';
-import '../api/weather_api_error.dart';
+import '../api/api.dart';
+import '../api/api_error.dart';
 
 /// Интерфейс предназначен для единых запросов и обработки ошибок.
-mixin OWMClient {
-  late final http.Client _httpClient;
+class HttpRepository {
+  HttpRepository();
+
+  final http.Client _httpClient = http.Client();
 
   static const int _statusOk = 200;
   static const int _statusOkTestApi = 400;
@@ -39,10 +41,10 @@ mixin OWMClient {
   }
 
   /// Check for a valid api key OWM.
-  static Future<bool> isCorrectApi(String yourApi) async {
-    final Uri uri = OpenWeatherMapAPI.uriTestApikey(yourApi);
+  Future<bool> isCorrectApi(String yourApi) async {
+    final Uri uri = OWMApi.uriTestApikey(yourApi);
 
-    final http.Response response = await http.Client().get(uri);
+    final http.Response response = await _httpClient.get(uri);
 
     if (response.statusCode == _statusOk ||
         response.statusCode == _statusOkTestApi) {
