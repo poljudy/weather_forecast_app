@@ -1,16 +1,16 @@
 import '../../api/api.dart';
-import '../http_repository.dart';
+import '../../utils/languages.dart';
+import '../http_owm_repository.dart';
 import 'all_weather_model.dart';
 
 /// Plugin for fetching weather data in JSON.
 class WeatherService {
-  WeatherService({
-    required this.owmApi,
-  });
+  WeatherService(String api, {WeatherLanguage? language})
+      : _owmApi = OWMApi(api, language: language ?? WeatherLanguage.english);
 
-  final OWMApi owmApi;
+  final OWMApi _owmApi;
 
-  final HttpRepository httpRepo = HttpRepository();
+  final HttpOWMRepository _httpRepo = HttpOWMRepository();
 
   /// Fetch [WeatherOneCall] based on geographical coordinates.
   ///
@@ -18,8 +18,8 @@ class WeatherService {
   /// For API documentation, see: [WeatherOnecall](https://openweathermap.org/api/one-call-api)
   Future<WeatherOneCall> oneCallWeatherByLocation(
           {required double latitude, required double longitude}) async =>
-      httpRepo.getData(
-          uri: owmApi.uriOnecallWeather(latitude, longitude),
+      _httpRepo.getData(
+          uri: _owmApi.uriOnecallWeather(latitude, longitude),
           builder: (dynamic data) {
             return WeatherOneCall.fromJson(
                 parseCurrent(data as Map<String, dynamic>));
@@ -31,8 +31,8 @@ class WeatherService {
   /// For API documentation, see: [WeatherCurrent](https://openweathermap.org/current)
   Future<WeatherCurrent> currentWeatherByLocation(
           {required double latitude, required double longitude}) async =>
-      httpRepo.getData(
-          uri: owmApi.uriCurrentWeather(latitude, longitude),
+      _httpRepo.getData(
+          uri: _owmApi.uriCurrentWeather(latitude, longitude),
           builder: (dynamic data) {
             return WeatherCurrent.fromJson(
                 parseCurrent(data as Map<String, dynamic>));

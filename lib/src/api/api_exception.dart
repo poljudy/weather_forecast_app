@@ -1,14 +1,14 @@
 /// Custom Exception for the plugin,
 /// Thrown whenever the API responds with an error and body could not be parsed.
 class OwmApiException implements Exception {
-  const OwmApiException(this.code, this.cause);
+  const OwmApiException(this.code, this.message);
 
   /// Message about error.
-  final String cause;
+  final String message;
 
   /// Code api error.
   final int code;
 
   @override
-  String toString() => '${super.toString()} - code: $code, message: $cause';
+  String toString() => 'code: $code, message: $message \n${super.toString()}';
 }

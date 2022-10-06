@@ -1,5 +1,5 @@
 import '../../api/api.dart';
-import '../http_repository.dart';
+import '../http_owm_repository.dart';
 import 'place_geocode_model.dart';
 
 /// The class provides access to the geocoding service of cities.
@@ -12,13 +12,11 @@ import 'place_geocode_model.dart';
 ///
 /// Learn more [geocoding-api](https://openweathermap.org/api/geocoding-api)
 class GeocodingService {
-  GeocodingService({
-    required this.owmApi,
-  });
+  GeocodingService(String api) : _owmApi = OWMApi(api);
 
-  final OWMApi owmApi;
+  final OWMApi _owmApi;
 
-  final HttpRepository httpRepo = HttpRepository();
+  final HttpOWMRepository _httpRepo = HttpOWMRepository();
 
   /// Get locations based on the approximate name of the location.
   ///
@@ -27,8 +25,8 @@ class GeocodingService {
   /// * limit -> Number of the locations in the API response (no more than 5).
   Future<List<PlaceGeocode>> getLocationByCityName(String cityName,
           {int limit = 5}) async =>
-      httpRepo.getData(
-        uri: owmApi.uriLocationByCityName(cityName),
+      _httpRepo.getData(
+        uri: _owmApi.uriLocationByCityName(cityName),
         builder: (dynamic data) => _castData(data),
       );
 
@@ -43,8 +41,8 @@ class GeocodingService {
     required double longitude,
     int limit = 5,
   }) async {
-    return httpRepo.getData(
-      uri: owmApi.uriLocationByCoordinates(latitude, longitude, limit: limit),
+    return _httpRepo.getData(
+      uri: _owmApi.uriLocationByCoordinates(latitude, longitude, limit: limit),
       builder: (dynamic data) => _castData(data),
     );
   }

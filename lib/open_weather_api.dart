@@ -1,11 +1,13 @@
-library open_weather_api;
-
 // ignore_for_file: directives_ordering
 
+library open_weather_api;
+
 // owm client
-export 'src/services/http_repository.dart';
-export 'src/api/api.dart';
-export 'src/api/api_error.dart';
+// export 'src/services/http_owm_repository.dart';
+// export 'src/api/api.dart';
+
+// error handling
+export 'src/api/api_exception.dart';
 
 // weather service
 export 'src/services/weather/weather_service.dart';
@@ -21,3 +23,4 @@ export 'src/utils/languages.dart';
 
 // for testing
 export 'src/test_api_weather.dart';
+export 'src/api/api_test.dart';

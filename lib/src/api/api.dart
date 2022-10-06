@@ -2,49 +2,41 @@ import '../utils/languages.dart';
 
 /// Uri builder class for the OpenWeatherMap(OWM) API.
 class OWMApi {
-  OWMApi({
-    required this.apiKey,
-    this.language = WeatherLanguage.russian,
-  });
+  OWMApi(
+    this._apiKey, {
+    WeatherLanguage language = WeatherLanguage.english,
+  }) : _language = language;
 
-  final String apiKey;
-  final WeatherLanguage language;
+  final String _apiKey;
+  final WeatherLanguage _language;
 
   static const String _schemeUrl = 'https';
   static const String _apiBaseUrl = 'api.openweathermap.org';
-
-  /// Create uri for testing apikey in OWM service.
-  static Uri uriTestApikey(String apikey) => Uri(
-        scheme: _schemeUrl,
-        host: _apiBaseUrl,
-        path: '$_apiPathWeather$_currentWeatherTag',
-        queryParameters: {'appid': apikey},
-      );
 
   // ===========================================================================
   // Weather
 
   static const String _apiPathWeather = '/data/2.5/';
-  static const String _currentWeatherTag = 'weather';
-  static const String _oneCallWeatherTag = 'onecall';
+  static const String _currentWeatherEndpoint = 'weather';
+  static const String _oneCallWeatherEndpoint = 'onecall';
 
   Uri uriCurrentWeather(double latitude, double longitude) => _buildUri(
         path: _apiPathWeather,
-        tag: _currentWeatherTag,
+        endpoint: _currentWeatherEndpoint,
         queryParams: () => _queryParametersWeather(latitude, longitude),
       );
 
   Uri uriOnecallWeather(double latitude, double longitude) => _buildUri(
         path: _apiPathWeather,
-        tag: _oneCallWeatherTag,
+        endpoint: _oneCallWeatherEndpoint,
         queryParams: () => _queryParametersWeather(latitude, longitude),
       );
 
   Map<String, dynamic> _queryParametersWeather(double? lat, double? lon) => {
         'lat': lat,
         'lon': lon,
-        'appid': apiKey,
-        'lang': language.code,
+        'appid': _apiKey,
+        'lang': _language.code,
         'units': 'standard',
       };
 
@@ -52,12 +44,12 @@ class OWMApi {
   // Geocoding
 
   static const String _apiPathGeocoding = '/geo/1.0/';
-  static const String _directGeocodingTag = 'direct';
-  static const String _reverseGeocodingTag = 'reverse';
+  static const String _directGeocodingEndpoint = 'direct';
+  static const String _reverseGeocodingEndpoint = 'reverse';
 
   Uri uriLocationByCityName(String cityName, {int limit = 5}) => _buildUri(
         path: _apiPathGeocoding,
-        tag: _directGeocodingTag,
+        endpoint: _directGeocodingEndpoint,
         queryParams: () => _queryParamsDirectGeocoding(cityName, limit),
       );
 
@@ -66,13 +58,13 @@ class OWMApi {
       {
         'q': cityName,
         'limit': limit,
-        'appid': apiKey,
+        'appid': _apiKey,
       };
 
   Uri uriLocationByCoordinates(double lat, double lon, {int limit = 5}) =>
       _buildUri(
         path: _apiPathGeocoding,
-        tag: _reverseGeocodingTag,
+        endpoint: _reverseGeocodingEndpoint,
         queryParams: () => _queryParamsReverseGeocoding(lat, lon, limit),
       );
 
@@ -88,21 +80,32 @@ class OWMApi {
         'lat': lat,
         'lon': lon,
         'limit': limit,
-        'appid': apiKey,
+        'appid': _apiKey,
       };
+
+  //============================================================================
+  // testing api
+
+  /// Create uri for testing apikey in OWM service.
+  static Uri uriTestApikey(String apikey) => Uri(
+        scheme: _schemeUrl,
+        host: _apiBaseUrl,
+        path: '$_apiPathWeather$_currentWeatherEndpoint',
+        queryParameters: {'appid': apikey},
+      );
 
   //============================================================================
   // build
 
   Uri _buildUri({
     required String path,
-    required String tag,
+    required String endpoint,
     required Map<String, dynamic> Function() queryParams,
   }) {
     return Uri(
       scheme: _schemeUrl,
       host: _apiBaseUrl,
-      path: '$path$tag',
+      path: '$path$endpoint',
       queryParameters: queryParams(),
     );
   }
