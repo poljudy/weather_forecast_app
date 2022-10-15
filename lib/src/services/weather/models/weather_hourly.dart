@@ -1,6 +1,6 @@
 import '../../../utils/parse.dart';
 
-/// Model represents hourly forecast weather data.
+/// Model represents hourly forecast weather data for [WeatherOneCall].
 class WeatherHourly {
   WeatherHourly(
     this._weatherData, {
@@ -25,9 +25,10 @@ class WeatherHourly {
     required this.weatherConditionCode,
   });
 
+  /// Creating [WeatherHourly] instance from json.
   factory WeatherHourly.fromJson(Map<String, dynamic> jsonData) {
     final Map<String, dynamic>? weather =
-        jsonData['weather']?[0] as Map<String, dynamic>?; // it's ok!
+        unpackList(jsonData, 'weather')?[0] as Map<String, dynamic>?;
 
     final Map<String, dynamic>? rain =
         jsonData['rain'] as Map<String, dynamic>?;
@@ -122,7 +123,7 @@ class WeatherHourly {
 
   @override
   String toString() =>
-      '${super.toString()}(date: $date, weatherMain: $weatherMain, tempDay: $temp)\n';
+      '$WeatherHourly(date: $date, weatherMain: $weatherMain, tempDay: $temp)';
 
   /// The original JSON data from the API.
   Map<String, dynamic> toJson() => _weatherData;

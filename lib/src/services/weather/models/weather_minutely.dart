@@ -1,6 +1,6 @@
 import '../../../utils/parse.dart';
 
-/// Model represents minute forecast weather.
+/// Model represents minute forecast weather for [WeatherOneCall].
 class WeatherMinutely {
   WeatherMinutely(
     this._weatherData, {
@@ -8,6 +8,7 @@ class WeatherMinutely {
     required this.precipitation,
   });
 
+  /// Creating [WeatherMinutely] instance from json.
   factory WeatherMinutely.fromJson(Map<String, dynamic> jsonData) {
     return WeatherMinutely(
       jsonData,
@@ -26,9 +27,8 @@ class WeatherMinutely {
   final Map<String, dynamic> _weatherData;
 
   @override
-  String toString() {
-    return '${super.toString()}(date: $date, precipitation: $precipitation)\n';
-  }
+  String toString() =>
+      '$WeatherMinutely(date: $date, precipitation: $precipitation)';
 
   /// The original JSON data from the API.
   Map<String, dynamic> toJson() => _weatherData;

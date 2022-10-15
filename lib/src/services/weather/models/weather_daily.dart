@@ -1,6 +1,6 @@
 import '../../../utils/parse.dart';
 
-/// Model represents daily forecast weather.
+/// Model represents daily forecast weather for [WeatherOneCall].
 class WeatherDaily {
   const WeatherDaily(
     this._weatherData, {
@@ -37,6 +37,7 @@ class WeatherDaily {
     required this.weatherConditionCode,
   });
 
+  /// Creating [WeatherDaily] instance from json.
   factory WeatherDaily.fromJson(Map<String, dynamic> jsonData) {
     final Map<String, dynamic>? temp =
         jsonData['temp'] as Map<String, dynamic>?;
@@ -45,7 +46,7 @@ class WeatherDaily {
         jsonData['feels_like'] as Map<String, dynamic>?;
 
     final Map<String, dynamic>? weather =
-        jsonData['weather']?[0] as Map<String, dynamic>?;
+        unpackList(jsonData, 'weather')?[0] as Map<String, dynamic>?;
 
     return WeatherDaily(
       jsonData,
@@ -190,9 +191,8 @@ class WeatherDaily {
   final Map<String, dynamic> _weatherData;
 
   @override
-  String toString() {
-    return '${super.toString()}(date: $date, weatherMain: $weatherMain, tempDay: $tempDay)\n';
-  }
+  String toString() =>
+      '$WeatherDaily(date: $date, weatherMain: $weatherMain, tempDay: $tempDay)';
 
   /// The original JSON data from the API
   Map<String, dynamic> toJson() => _weatherData;

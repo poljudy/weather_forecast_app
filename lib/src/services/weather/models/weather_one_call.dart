@@ -8,11 +8,13 @@ import 'weather_minutely.dart';
 /// Model represents weather by One Call API request.
 ///
 /// The One Call API provides the following weather data:
-/// * Current weather
-/// * Minute forecast for 1 hour
-/// * Hourly forecast for 48 hours
-/// * Daily forecast for 7 days
-/// * National weather alerts
+/// * Current weather - [WeatherCurrent]
+/// * Minute forecast for 1 hour - [WeatherMinutely]
+/// * Hourly forecast for 48 hours - [WeatherHourly]
+/// * Daily forecast for 7 days - [WeatherDaily]
+/// * National weather alerts - [WeatherAlert]
+///
+/// See more [one-call-api](https://openweathermap.org/api/one-call-api)
 class WeatherOneCall {
   const WeatherOneCall(
     this._weatherData, {
@@ -27,27 +29,46 @@ class WeatherOneCall {
     required this.alerts,
   });
 
+  /// Check [List] to empty or null.
+  static bool _isData<T extends List?>(T data) => data?.isNotEmpty ?? false;
+
+  /// Creating [WeatherOneCall] instance from json.
   factory WeatherOneCall.fromJson(Map<String, dynamic> jsonData) {
+    final currentData = unpackMap(jsonData, 'current');
+    final minutelyData = unpackList(jsonData, 'minutely');
+    final hourlyData = unpackList(jsonData, 'hourly');
+    final dailyData = unpackList(jsonData, 'daily');
+    final alertsData = unpackList(jsonData, 'alerts');
+
     return WeatherOneCall(
       jsonData,
       latitude: unpackDouble(jsonData, 'lat'),
       longitude: unpackDouble(jsonData, 'lon'),
       timezone: unpackString(jsonData, 'timezone'),
       timezoneOffset: unpackDate(jsonData, 'timezone_offset'),
-      current:
-          WeatherCurrent.fromJson(jsonData['current'] as Map<String, dynamic>),
-      minutely: (jsonData['minutely'] as List?)
-          ?.map((w) => WeatherMinutely.fromJson(w as Map<String, dynamic>))
-          .toList(),
-      hourly: (jsonData['hourly'] as List?)
-          ?.map((w) => WeatherHourly.fromJson(w as Map<String, dynamic>))
-          .toList(),
-      daily: (jsonData['daily'] as List?)
-          ?.map((w) => WeatherDaily.fromJson(w as Map<String, dynamic>))
-          .toList(),
-      alerts: (jsonData['alerts'] as List?)
-          ?.map((w) => WeatherAlert.fromJson(w as Map<String, dynamic>))
-          .toList(),
+      current: currentData?.isNotEmpty ?? false
+          ? WeatherCurrent.fromJson(currentData! as Map<String, dynamic>)
+          : null,
+      minutely: _isData(minutelyData)
+          ? minutelyData!
+              .map((w) => WeatherMinutely.fromJson(w as Map<String, dynamic>))
+              .toList()
+          : null,
+      hourly: _isData(hourlyData)
+          ? hourlyData!
+              .map((w) => WeatherHourly.fromJson(w as Map<String, dynamic>))
+              .toList()
+          : null,
+      daily: _isData(dailyData)
+          ? dailyData!
+              .map((w) => WeatherDaily.fromJson(w as Map<String, dynamic>))
+              .toList()
+          : null,
+      alerts: _isData(alertsData)
+          ? alertsData!
+              .map((w) => WeatherAlert.fromJson(w as Map<String, dynamic>))
+              .toList()
+          : null,
     );
   }
 
@@ -83,7 +104,7 @@ class WeatherOneCall {
 
   @override
   String toString() =>
-      '${super.toString()} lat: $latitude, lon: $longitude, temp: ${current?.temp}';
+      '$WeatherOneCall(lat: $latitude, lon: $longitude, temp: ${current?.temp})';
 
   /// The original JSON data from the API
   Map<String, dynamic> toJson() => _weatherData;

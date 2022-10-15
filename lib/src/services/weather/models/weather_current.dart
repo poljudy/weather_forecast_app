@@ -1,5 +1,6 @@
 import '../../../utils/parse.dart';
 
+/// The model is current weather data API response for [WeatherOneCall].
 class WeatherCurrent {
   const WeatherCurrent(
     this._weatherData, {
@@ -23,9 +24,10 @@ class WeatherCurrent {
     required this.weatherConditionCode,
   });
 
+  /// Creating [WeatherCurrent] instance from json.
   factory WeatherCurrent.fromJson(Map<String, dynamic> jsonData) {
     final Map<String, dynamic>? weatherData =
-        jsonData['weather']?[0] as Map<String, dynamic>?;
+        unpackList(jsonData, 'weather')?[0] as Map<String, dynamic>?;
 
     return WeatherCurrent(
       jsonData,
@@ -110,28 +112,29 @@ class WeatherCurrent {
 
   @override
   String toString() =>
-      '${super.toString()}(date: $date, weatherMain: $weatherMain, temp: $temp)';
+      '$WeatherCurrent(date: $date, weatherMain: $weatherMain, temp: $temp)';
 
   /// The original JSON data from the API.
   Map<String, dynamic> toJson() => _weatherData;
 }
 
-/// Safely conversion of json to accepted view after request [getCurrentWeather].
+/// Safely conversion of json to accepted view
+/// after request [WeatherService.currentWeatherByLocation].
 Map<String, dynamic> parseCurrent(Map<String, dynamic> jsonCurrent) {
   return {
     'timezone_offset': jsonCurrent['timezone'],
     'dt': jsonCurrent['dt'],
-    'sunrise': jsonCurrent['sys']?['sunrise'],
-    'sunset': jsonCurrent['sys']?['sunset'],
-    'temp': jsonCurrent['main']?['temp'],
-    'feels_like': jsonCurrent['main']?['feels_like'],
-    'pressure': jsonCurrent['main']?['pressure'],
-    'humidity': jsonCurrent['main']?['humidity'],
-    'clouds': jsonCurrent['clouds']?['all'],
+    'sunrise': unpackMap(jsonCurrent, 'sys')?['sunrise'],
+    'sunset': unpackMap(jsonCurrent, 'sys')?['sunset'],
+    'temp': unpackMap(jsonCurrent, 'main')?['temp'],
+    'feels_like': unpackMap(jsonCurrent, 'main')?['feels_like'],
+    'pressure': unpackMap(jsonCurrent, 'main')?['pressure'],
+    'humidity': unpackMap(jsonCurrent, 'main')?['humidity'],
+    'clouds': unpackMap(jsonCurrent, 'clouds')?['all'],
     'visibility': jsonCurrent['visibility'],
-    'wind_speed': jsonCurrent['wind']?['speed'],
-    'wind_deg': jsonCurrent['wind']?['deg'],
-    'wind_gust': jsonCurrent['wind']?['gust'],
+    'wind_speed': unpackMap(jsonCurrent, 'wind')?['speed'],
+    'wind_deg': unpackMap(jsonCurrent, 'wind')?['deg'],
+    'wind_gust': unpackMap(jsonCurrent, 'wind')?['gust'],
     'weather': jsonCurrent['weather'],
   };
 }

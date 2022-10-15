@@ -1,4 +1,3 @@
-
 import '../../../utils/parse.dart';
 
 /// Model represents national weather alerts.
@@ -15,6 +14,7 @@ class WeatherAlert {
     required this.tags,
   });
 
+  /// Creating [WeatherAlert] instance from json.
   factory WeatherAlert.fromJson(Map<String, dynamic> jsonData) {
     return WeatherAlert(
       jsonData,
@@ -49,8 +49,7 @@ class WeatherAlert {
   final Map<String, dynamic> _weatherData;
 
   @override
-  String toString() =>
-      '${super.toString()}(event: $event, start: $start, end: $end)';
+  String toString() => '$WeatherAlert(event: $event, start: $start, end: $end)';
 
   /// The original JSON data from the API.
   Map<String, dynamic> toJson() => _weatherData;
