@@ -23,8 +23,10 @@ class GeocodingService {
   /// params:
   /// * cityName -> city name on local language.
   /// * limit -> Number of the locations in the API response (no more than 5).
-  Future<List<PlaceGeocode>> getLocationByCityName(String cityName,
-          {int limit = 5}) async =>
+  Future<List<PlaceGeocode>> getLocationByCityName(
+    String cityName, {
+    int limit = 5,
+  }) async =>
       _httpRepo.getData(
         uri: _owmApi.uriLocationByCityName(cityName),
         builder: (dynamic data) => _castData(data),
@@ -47,10 +49,11 @@ class GeocodingService {
     );
   }
 
-  // todo: For manually parsing a list of json locations (aka "I handle it myself").
+  // todo?: For manually parsing a list of json locations (aka "I handle it myself").
 
   List<PlaceGeocode> _castData(dynamic data) => (data as List<dynamic>)
       .map(
-          (dynamic json) => PlaceGeocode.fromJson(json as Map<String, dynamic>))
+        (dynamic json) => PlaceGeocode.fromJson(json as Map<String, dynamic>),
+      )
       .toList();
 }
