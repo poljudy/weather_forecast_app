@@ -1,64 +1,72 @@
 // ignore_for_file: constant_identifier_names
+
+/// You can use lang parameter to get the output in your language.
+///
+/// The contents of the [WeatherAlert.description] field will be translated.
+///
+/// [Multilingual support](https://openweathermap.org/api/one-call-api#multi)
+///
+/// OpenWeather support the following languages.
 enum WeatherLanguage {
-  afrikaans('af'),
-  albanian('al'),
-  arabic('ar'),
-  azerbaijani('az'),
-  bulgarian('bg'),
-  catalan('ca'),
-  czech('cz'),
-  danish('da'),
-  german('de'),
-  greek('el'),
-  english('en'),
-  basque('eu'),
-  persian('fa'),
-  farsi('fa'),
-  finnish('fi'),
-  french('fr'),
-  galician('gl'),
-  hebrew('he'),
-  hindi('hi'),
-  croatian('hr'),
-  hungarian('hu'),
-  indonesian('id'),
-  italian('it'),
-  japanese('ja'),
-  korean('kr'),
-  latvian('la'),
-  lithuanian('lt'),
-  macedonian('mk'),
-  norwegian('no'),
-  dutch('nl'),
-  polish('pl'),
-  portuguese('pt'),
-  portugueseBrazilian('pt_br'),
-  romanian('ro'),
-  russian('ru'),
-  swedish('sv'),
-  slovak('sk'),
-  slovenian('sl'),
-  spanish('sp'),
-  serbian('sr'),
-  thai('th'),
-  turkish('tr'),
-  ukrainian('ua'),
-  vietnamese('vi'),
-  chineseSimplified('zh_cn'),
-  chineseTraditional('zh_tw'),
-  zulu('zu');
+  afrikaans('af', 'Afrikaans'),
+  albanian('al', 'Albanian'),
+  arabic('ar', 'Arabic'),
+  azerbaijani('az', 'Azerbaijani'),
+  bulgarian('bg', 'Bulgarian'),
+  catalan('ca', 'Catalan'),
+  czech('cz', 'Czech'),
+  danish('da', 'Danish'),
+  german('de', 'German'),
+  greek('el', 'Greek'),
+  english('en', 'English'),
+  basque('eu', 'Basque'),
+  persian('fa', 'Persian'),
+  farsi('fa', 'Farsi'),
+  finnish('fi', 'Finnish'),
+  french('fr', 'French'),
+  galician('gl', 'Galician'),
+  hebrew('he', 'Hebrew'),
+  hindi('hi', 'Hindi'),
+  croatian('hr', 'Croatian'),
+  hungarian('hu', 'Hungarian'),
+  indonesian('id', 'Indonesian'),
+  italian('it', 'Italian'),
+  japanese('ja', 'Japanese'),
+  korean('kr', 'Korean'),
+  latvian('la', 'Latvian'),
+  lithuanian('lt', 'Latvian'),
+  macedonian('mk', 'Macedonian'),
+  norwegian('no', 'Norwegian'),
+  dutch('nl', 'Dutch'),
+  polish('pl', 'Polish'),
+  portuguese('pt', 'Portuguese'),
+  portugueseBrazilian('pt_br', 'Português Brasil'),
+  romanian('ro', 'Romanian'),
+  russian('ru', 'Russian'),
+  swedish('sv', 'Swedish'), // in case of problems, replace with 'se'
+  slovak('sk', 'Slovak'),
+  slovenian('sl', 'Slovenian'),
+  spanish('sp', 'Spanish'), // in case of problems, replace with 'es'
+  serbian('sr', 'Serbian'),
+  thai('th', 'Thai'),
+  turkish('tr', 'Turkish'),
+  ukrainian('ua', 'Ukrainian'), // in case of problems, replace with 'uk'
+  vietnamese('vi', 'Vietnamese'),
+  chineseSimplified('zh_cn', 'Chinese Simplified'),
+  chineseTraditional('zh_tw', 'Chinese Traditional'),
+  zulu('zu', 'Zulu');
 
-  const WeatherLanguage(this.code);
+  const WeatherLanguage(this.code, this.name);
 
+  /// Language code for queries.
   final String code;
+
+  /// Language full name.
+  final String name;
 }
 
-// todo - create const map?
-// final Map<String, WeatherLanguage> languageCodeReverse = {
-//   for (WeatherLanguage wl in WeatherLanguage.values) wl.code: wl
-// };
-
-final Map<String, WeatherLanguage> languageCodeReverse =
+/// Map of matching [WeatherLanguage.code] and [WeatherLanguage].
+final Map<String, WeatherLanguage> codeAndLangMatching =
     <String, WeatherLanguage>{
   WeatherLanguage.afrikaans.code: WeatherLanguage.afrikaans,
   WeatherLanguage.albanian.code: WeatherLanguage.albanian,
@@ -72,7 +80,11 @@ final Map<String, WeatherLanguage> languageCodeReverse =
   WeatherLanguage.greek.code: WeatherLanguage.greek,
   WeatherLanguage.english.code: WeatherLanguage.english,
   WeatherLanguage.basque.code: WeatherLanguage.basque,
-  WeatherLanguage.farsi.code: WeatherLanguage.farsi, // persian too
+
+  // farsi.code == persian.code
+  WeatherLanguage.farsi.code: WeatherLanguage.farsi,
+  WeatherLanguage.persian.code: WeatherLanguage.persian,
+
   WeatherLanguage.finnish.code: WeatherLanguage.finnish,
   WeatherLanguage.french.code: WeatherLanguage.french,
   WeatherLanguage.galician.code: WeatherLanguage.galician,
@@ -94,14 +106,26 @@ final Map<String, WeatherLanguage> languageCodeReverse =
   WeatherLanguage.portugueseBrazilian.code: WeatherLanguage.portugueseBrazilian,
   WeatherLanguage.romanian.code: WeatherLanguage.romanian,
   WeatherLanguage.russian.code: WeatherLanguage.russian,
+
+  // swedish.code == 'sv'
   WeatherLanguage.swedish.code: WeatherLanguage.swedish,
+  'se': WeatherLanguage.swedish, // too swedish
+
   WeatherLanguage.slovak.code: WeatherLanguage.slovak,
   WeatherLanguage.slovenian.code: WeatherLanguage.slovenian,
+
+  // spanish.code == 'sp'
   WeatherLanguage.spanish.code: WeatherLanguage.spanish,
+  'es': WeatherLanguage.spanish, // too spanish
+
   WeatherLanguage.serbian.code: WeatherLanguage.serbian,
   WeatherLanguage.thai.code: WeatherLanguage.thai,
   WeatherLanguage.turkish.code: WeatherLanguage.turkish,
+
+  // ukrainian.code == 'ua'
   WeatherLanguage.ukrainian.code: WeatherLanguage.ukrainian,
+  'uk': WeatherLanguage.ukrainian, // too ukrainian
+
   WeatherLanguage.vietnamese.code: WeatherLanguage.vietnamese,
   WeatherLanguage.chineseSimplified.code: WeatherLanguage.chineseSimplified,
   WeatherLanguage.chineseTraditional.code: WeatherLanguage.chineseTraditional,

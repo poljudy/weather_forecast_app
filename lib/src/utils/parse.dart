@@ -4,7 +4,7 @@ int? unpackInt(Map<String, dynamic>? M, String k) {
     if (M.containsKey(k)) {
       final dynamic val = M[k];
       if (val is String) {
-        return int.parse(val);
+        return int.tryParse(val);
       } else if (val is int) {
         return val;
       }
@@ -19,7 +19,7 @@ double? unpackDouble(Map<String, dynamic>? M, String k) {
     if (M.containsKey(k)) {
       final dynamic val = M[k];
       if (val is String) {
-        return double.parse(val);
+        return double.tryParse(val);
       } else if (val is num) {
         return val.toDouble();
       }

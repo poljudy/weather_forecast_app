@@ -1,104 +1,80 @@
-/// Миксин предоставляет возможность классам с единицами измерений
-/// конвертировать значение в текст или число с нужной точностью.
+// ignore_for_file: require_trailing_commas
+
+/// Mixin provides the ability for unit classes to convert a value to text
+/// or number with the desired accuracy.
 ///
-/// Более того, это стандартизирует наши классы, представляющие
-/// единицы измерения [Temp], [Speed], [Pressure], [SideOfTheWorld].
+/// Moreover, this standardizes our classes representing
+/// [Temp], [Speed], [Pressure] units.
 mixin EnumValue {
   /// Converts value to double with [precision] and [Enum].
   ///
-  /// To Do implements with use switch case.
+  /// Implemented with the use switch case.
   double value(double value, [int precision = 1]);
 
-  /// Converts [value] to the minimum number of decimal places. Up to 0.
+  /// Converts [value] to the minimum number of decimal places. Default to 0.
   ///
   /// Examples:
   /// ```dart
-  /// (5.1234).fromMSToString(precision = 0);  // 5
-  /// (5.123456).fromMSToString(precision = 1);  // 5.1
-  /// (5.666666).fromMSToString(precision = 6);  // 5.666667
-  /// (5.1).fromMSToString(precision = 6);  // 5.100000
+  /// (5.1234).valueToString(precision = 0);  // 5
+  /// (5.123456).valueToString(precision = 1);  // 5.1
+  /// (5.666666).valueToString(precision = 6);  // 5.666667
+  /// (5.1).valueToString(precision = 6);  // 5.100000
   /// ```
-  String valueToString(double value, [int precision = 0]) =>
-      this.value(value, precision).toStringAsFixed(precision);
+  String valueToString(double value, [int precision = 0]) {
+    assert(precision >= 0);
+
+    return this.value(value, precision).toStringAsFixed(precision);
+  }
 }
 
-// enum RTemp with EnumValue {
-//   kelvin('Kelvin', 'K'),
-//   celsius('Celsius', '°C'),
-//   fahrenheit('Fahrenheit', '°F');
-//
-//   const RTemp(this.name, this.abbr);
-//
-//   final String name;
-//   final String abbr;
-//
-//   @override
-//   double value(double value, [int precision = 1]) {
-//     switch (this) {
-//       case RTemp.celsius:
-//         return double.parse((value - 273.15).toStringAsFixed(precision));
-//       case RTemp.fahrenheit:
-//         return double.parse((value * 1.8 - 459.67).toStringAsFixed(precision));
-//       case RTemp.kelvin:
-//       default:
-//         return double.parse(value.toStringAsFixed(precision));
-//     }
-//   }
-// }
-
-// todo add mixin EnumValue.
 /// Represents units of temperature measurement.
-enum Temp {
+enum Temp with EnumValue {
   kelvin('Kelvin', 'K'),
   celsius('Celsius', '°C'),
   fahrenheit('Fahrenheit', '°F');
 
   const Temp(this.name, this.abbr);
 
+  /// Full name.
   final String name;
+
+  /// Abbreviation.
   final String abbr;
 
   /// Translating temperature from Kelvin to another.
   ///
-  /// Default, temperature in Kelvin.
-  static double fromKelvinTo(Temp toTemp, double value, [int precision = 1]) {
-    switch (toTemp) {
+  /// Default, temperature in [kelvin].
+  @override
+  double value(double value, [int precision = 1]) {
+    switch (this) {
+      case Temp.kelvin:
+        return double.parse(value.toStringAsFixed(precision));
       case Temp.celsius:
         return double.parse((value - 273.15).toStringAsFixed(precision));
       case Temp.fahrenheit:
         return double.parse((value * 1.8 - 459.67).toStringAsFixed(precision));
-      case Temp.kelvin:
-      default:
-        return double.parse(value.toStringAsFixed(precision));
     }
   }
 
-  /// Translating temperature from Kelvin to another and
-  /// return String to a specified precision.
-  ///
-  /// Default, temperature in Kelvin.
-  static String fromKelvinToString(Temp toTemp, double value,
-          [int precision = 0]) =>
-      fromKelvinTo(toTemp, value).toStringAsFixed(precision);
-
-  /// Точка, при которой замерзает вода исходя из системы счисления.
-  static double getMeltingPoint(Temp toTemp) {
-    switch (toTemp) {
+  /// The value at which the water freezes.
+  double getMeltingPoint() {
+    switch (this) {
       case Temp.celsius:
-        return 0;
+        return 0.0;
       case Temp.fahrenheit:
-        return 32;
+        return 32.0;
       case Temp.kelvin:
-      default:
         return 273.15;
     }
   }
 }
 
 /// Represents units of speed.
+///
+/// Enums:
 /// * ms - meters per second
 /// * mph - miles per hour
-/// * kph - kilometers per hour
+/// * kph or km/h - kilometers per hour
 enum Speed with EnumValue {
   ms('meters per second', 'm/s'),
   mph('miles per hour', 'mph'),
@@ -106,22 +82,24 @@ enum Speed with EnumValue {
 
   const Speed(this.name, this.abbr);
 
+  /// Full name.
   final String name;
+
+  /// Abbreviation.
   final String abbr;
 
   /// Translating speed from meter/sec to another.
   ///
-  /// Default, speed in meter/sec (ms)
+  /// Default, speed in [ms] (meter/sec).
   @override
   double value(double value, [int precision = 1]) {
     switch (this) {
+      case Speed.ms:
+        return double.parse(value.toStringAsFixed(precision));
       case Speed.kph:
         return double.parse((value * 3.6).toStringAsFixed(precision));
       case Speed.mph:
         return double.parse((value * 2.2369).toStringAsFixed(precision));
-      case Speed.ms:
-      default:
-        return double.parse(value.toStringAsFixed(precision));
     }
   }
 }
@@ -138,15 +116,21 @@ enum Pressure with EnumValue {
 
   const Pressure(this.name, this.abbr);
 
+  /// Full name.
   final String name;
+
+  /// Abbreviation.
   final String abbr;
 
   /// Translating pressure from hPa to another.
   ///
-  /// Default, pressure in hectopascals.
+  /// Default, pressure in [hectoPa] (hectopascals).
   @override
   double value(double value, [int precision = 1]) {
     switch (this) {
+      case Pressure.hectoPa:
+      case Pressure.mbar:
+        return value;
       case Pressure.mmHg:
         return double.parse((value * 0.75006).toStringAsFixed(precision));
       case Pressure.kPa:
@@ -158,17 +142,12 @@ enum Pressure with EnumValue {
         return double.parse((value * 0.00099).toStringAsFixed(precision + 2));
       case Pressure.inHg:
         return double.parse((value * 0.02953).toStringAsFixed(precision));
-      case Pressure.mbar:
-      case Pressure.hectoPa:
-      default:
-        return value;
     }
   }
 }
 
-/// Стороны света.
+/// Represents the cardinal directions or, in other words, cardinal points.
 enum SideOfTheWorld {
-  // cardinal point
   north('N', 'North'),
   northEast('NE', 'North-East'),
   east('E', 'East'),
@@ -180,10 +159,13 @@ enum SideOfTheWorld {
 
   const SideOfTheWorld(this.abbr, this.name);
 
-  final String abbr;
+  /// Full name.
   final String name;
 
-  /// Функция перевода из градусов в стороны света.
+  /// Abbreviation.
+  final String abbr;
+
+  /// The function of translation from degrees to the cardinal directions.
   static SideOfTheWorld fromDegrees(double deg) {
     assert(0.0 <= deg && deg <= 360.0);
 
@@ -218,6 +200,6 @@ enum SideOfTheWorld {
     if (deg == 157.5 || deg == 202.5) return south;
     if (deg == 247.5 || deg == 292.5) return west;
 
-    return north; // todo - error?
+    throw ArgumentError('contact the package author with this value - $deg');
   }
 }
