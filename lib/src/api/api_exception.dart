@@ -1,4 +1,5 @@
-/// Custom Exception for the plugin,
+/// Custom Exception for the Open Weather.
+///
 /// Thrown whenever the API responds with an error and body could not be parsed.
 class OwmApiException implements Exception {
   const OwmApiException(this.code, this.message);
@@ -7,8 +8,10 @@ class OwmApiException implements Exception {
   final String message;
 
   /// Code api error.
+  ///
+  /// See more: [section API errors](https://openweathermap.org/faq)
   final int code;
 
   @override
-  String toString() => 'code: $code, message: $message \n${super.toString()}';
+  String toString() => '$OwmApiException(code: $code, message: $message)';
 }

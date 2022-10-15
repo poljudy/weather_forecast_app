@@ -54,7 +54,9 @@ class OWMApi {
       );
 
   Map<String, dynamic> _queryParamsDirectGeocoding(
-          String cityName, int limit) =>
+    String cityName,
+    int limit,
+  ) =>
       {
         'q': cityName,
         'limit': limit,
@@ -69,13 +71,14 @@ class OWMApi {
       );
 
   /// -> param:
-  /// * tag: direct or reverse
-  /// * cityName: city name on local language
   /// * limit: Number of the locations in the API response (no more than 5)
   /// * lat: latitude
   /// * lon: longitude
   Map<String, dynamic> _queryParamsReverseGeocoding(
-          double lat, double lon, int limit) =>
+    double lat,
+    double lon,
+    int limit,
+  ) =>
       {
         'lat': lat,
         'lon': lon,
@@ -86,7 +89,7 @@ class OWMApi {
   //============================================================================
   // testing api
 
-  /// Create uri for testing apikey in OWM service.
+  /// Create uri for testing APIkey in OWM service.
   static Uri uriTestApikey(String apikey) => Uri(
         scheme: _schemeUrl,
         host: _apiBaseUrl,
@@ -101,12 +104,15 @@ class OWMApi {
     required String path,
     required String endpoint,
     required Map<String, dynamic> Function() queryParams,
-  }) {
-    return Uri(
-      scheme: _schemeUrl,
-      host: _apiBaseUrl,
-      path: '$path$endpoint',
-      queryParameters: queryParams(),
-    );
-  }
+  }) =>
+      Uri(
+        scheme: _schemeUrl,
+        host: _apiBaseUrl,
+        path: '$path$endpoint',
+        queryParameters: queryParams().map((key, value) {
+          // we must explicitly call `toString()`
+          // because type `queryParameters` is /*String|Iterable<String>*/
+          return MapEntry(key, value.toString());
+        }),
+      );
 }
