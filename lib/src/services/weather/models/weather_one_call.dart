@@ -15,6 +15,9 @@ import 'weather_minutely.dart';
 /// * National weather alerts - [WeatherAlert]
 ///
 /// See more [one-call-api](https://openweathermap.org/api/one-call-api)
+///
+/// (!) If the list of fields [current], [minutely], [hourly], [daily], [alerts]
+/// is empty, then these values are null.
 class WeatherOneCall {
   const WeatherOneCall(
     this._weatherData, {
@@ -103,8 +106,12 @@ class WeatherOneCall {
   final Map<String, dynamic> _weatherData;
 
   @override
-  String toString() =>
-      '$WeatherOneCall(lat: $latitude, lon: $longitude, temp: ${current?.temp})';
+  String toString() => '$WeatherOneCall(lat: $latitude, lon: $longitude, '
+      '${current ?? 'current=null'}, '
+      '${minutely?.first ?? 'minutely=null'}, '
+      '${hourly?.first ?? 'hourly=null'}, '
+      '${daily?.first ?? 'daily=null'}, '
+      '${alerts?.first ?? 'alerts=null'})';
 
   /// The original JSON data from the API
   Map<String, dynamic> toJson() => _weatherData;

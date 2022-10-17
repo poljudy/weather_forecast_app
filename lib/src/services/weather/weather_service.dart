@@ -23,9 +23,7 @@ class WeatherService {
       _httpRepo.getData(
         uri: _owmApi.uriOnecallWeather(latitude, longitude),
         builder: (dynamic data) {
-          return WeatherOneCall.fromJson(
-            parseCurrent(data as Map<String, dynamic>),
-          );
+          return WeatherOneCall.fromJson(data as Map<String, dynamic>);
         },
       );
 
