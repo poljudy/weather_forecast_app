@@ -1,29 +1,10 @@
-include: package:lint/analysis_options.yaml
+include: package:lint/analysis_options_package.yaml
 
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options
 linter:
   rules:
-    # Make constructors the first thing in every class
-    sort_constructors_first: true
-
     always_use_package_imports: false
-
-    # The new tabs vs. spaces. Choose wisely
+    no_default_cases: true
     prefer_single_quotes: true
-    prefer_double_quotes: false
-
-    # Good packages document everything
-    public_member_api_docs: false
-
-    # Blindly follow the Flutter code style, which prefers types everywhere
-    always_specify_types: true
-
-    # Back to the 80s
-    lines_longer_than_80_chars: false
-
-    # Use parameter order as in json response
-    always_put_required_named_parameters_first: false
-
-    # Util classes are awesome!
-    avoid_classes_with_only_static_members: false
+#    public_member_api_docs: true

@@ -7,9 +7,6 @@ environment:
   sdk: ">=2.17.0 <3.0.0"
 
 dependencies:
-  flutter:
-    sdk: flutter
-
   http: ^0.13.5
 
 dev_dependencies:
@@ -21,4 +18,3 @@ dev_dependencies:
 flutter:
    assets:
     - assets/weather_icons/
-    - assets/example_response_json/
