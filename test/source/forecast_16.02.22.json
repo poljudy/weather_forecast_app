@@ -1,0 +1,1493 @@
+{
+  "cod": "200",
+  "message": 0,
+  "cnt": 40,
+  "list": [
+    {
+      "dt": 1645012800,
+      "main": {
+        "temp": 270.47,
+        "feels_like": 265.51,
+        "temp_min": 270.47,
+        "temp_max": 271.52,
+        "pressure": 1021,
+        "sea_level": 1021,
+        "grnd_level": 1000,
+        "humidity": 93,
+        "temp_kf": -1.05
+      },
+      "weather": [
+        {
+          "id": 803,
+          "main": "Clouds",
+          "description": "облачно с прояснениями",
+          "icon": "04d"
+        }
+      ],
+      "clouds": {
+        "all": 83
+      },
+      "wind": {
+        "speed": 4.09,
+        "deg": 183,
+        "gust": 9.15
+      },
+      "visibility": 10000,
+      "pop": 0,
+      "sys": {
+        "pod": "d"
+      },
+      "dt_txt": "2022-02-16 12:00:00"
+    },
+    {
+      "dt": 1645023600,
+      "main": {
+        "temp": 271.54,
+        "feels_like": 265.87,
+        "temp_min": 271.54,
+        "temp_max": 272.34,
+        "pressure": 1019,
+        "sea_level": 1019,
+        "grnd_level": 999,
+        "humidity": 90,
+        "temp_kf": -0.8
+      },
+      "weather": [
+        {
+          "id": 804,
+          "main": "Clouds",
+          "description": "пасмурно",
+          "icon": "04n"
+        }
+      ],
+      "clouds": {
+        "all": 94
+      },
+      "wind": {
+        "speed": 5.6,
+        "deg": 199,
+        "gust": 9.41
+      },
+      "visibility": 10000,
+      "pop": 0,
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2022-02-16 15:00:00"
+    },
+    {
+      "dt": 1645034400,
+      "main": {
+        "temp": 272.55,
+        "feels_like": 267.3,
+        "temp_min": 272.55,
+        "temp_max": 272.55,
+        "pressure": 1016,
+        "sea_level": 1016,
+        "grnd_level": 997,
+        "humidity": 96,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 600,
+          "main": "Snow",
+          "description": "небольшой снег",
+          "icon": "13n"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 5.32,
+        "deg": 177,
+        "gust": 11.28
+      },
+      "visibility": 1789,
+      "pop": 0.2,
+      "snow": {
+        "3h": 0.11
+      },
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2022-02-16 18:00:00"
+    },
+    {
+      "dt": 1645045200,
+      "main": {
+        "temp": 273.37,
+        "feels_like": 267.99,
+        "temp_min": 273.37,
+        "temp_max": 273.37,
+        "pressure": 1015,
+        "sea_level": 1015,
+        "grnd_level": 995,
+        "humidity": 96,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 600,
+          "main": "Snow",
+          "description": "небольшой снег",
+          "icon": "13n"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 5.97,
+        "deg": 184,
+        "gust": 11.88
+      },
+      "visibility": 1070,
+      "pop": 0.24,
+      "snow": {
+        "3h": 0.19
+      },
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2022-02-16 21:00:00"
+    },
+    {
+      "dt": 1645056000,
+      "main": {
+        "temp": 273.4,
+        "feels_like": 268.59,
+        "temp_min": 273.4,
+        "temp_max": 273.4,
+        "pressure": 1013,
+        "sea_level": 1013,
+        "grnd_level": 994,
+        "humidity": 96,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 804,
+          "main": "Clouds",
+          "description": "пасмурно",
+          "icon": "04n"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 4.93,
+        "deg": 183,
+        "gust": 10.35
+      },
+      "visibility": 10000,
+      "pop": 0,
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2022-02-17 00:00:00"
+    },
+    {
+      "dt": 1645066800,
+      "main": {
+        "temp": 273.8,
+        "feels_like": 268.43,
+        "temp_min": 273.8,
+        "temp_max": 273.8,
+        "pressure": 1009,
+        "sea_level": 1009,
+        "grnd_level": 990,
+        "humidity": 98,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 804,
+          "main": "Clouds",
+          "description": "пасмурно",
+          "icon": "04n"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 6.19,
+        "deg": 171,
+        "gust": 11.73
+      },
+      "visibility": 128,
+      "pop": 0,
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2022-02-17 03:00:00"
+    },
+    {
+      "dt": 1645077600,
+      "main": {
+        "temp": 274.21,
+        "feels_like": 268.03,
+        "temp_min": 274.21,
+        "temp_max": 274.21,
+        "pressure": 1007,
+        "sea_level": 1007,
+        "grnd_level": 988,
+        "humidity": 94,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 804,
+          "main": "Clouds",
+          "description": "пасмурно",
+          "icon": "04d"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 8.48,
+        "deg": 188,
+        "gust": 14.94
+      },
+      "visibility": 10000,
+      "pop": 0,
+      "sys": {
+        "pod": "d"
+      },
+      "dt_txt": "2022-02-17 06:00:00"
+    },
+    {
+      "dt": 1645088400,
+      "main": {
+        "temp": 274.37,
+        "feels_like": 268.16,
+        "temp_min": 274.37,
+        "temp_max": 274.37,
+        "pressure": 1004,
+        "sea_level": 1004,
+        "grnd_level": 985,
+        "humidity": 100,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 804,
+          "main": "Clouds",
+          "description": "пасмурно",
+          "icon": "04d"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 8.69,
+        "deg": 184,
+        "gust": 17.63
+      },
+      "visibility": 159,
+      "pop": 0,
+      "sys": {
+        "pod": "d"
+      },
+      "dt_txt": "2022-02-17 09:00:00"
+    },
+    {
+      "dt": 1645099200,
+      "main": {
+        "temp": 274.85,
+        "feels_like": 268.44,
+        "temp_min": 274.85,
+        "temp_max": 274.85,
+        "pressure": 1000,
+        "sea_level": 1000,
+        "grnd_level": 981,
+        "humidity": 99,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 804,
+          "main": "Clouds",
+          "description": "пасмурно",
+          "icon": "04d"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 9.77,
+        "deg": 187,
+        "gust": 19.41
+      },
+      "visibility": 238,
+      "pop": 0,
+      "sys": {
+        "pod": "d"
+      },
+      "dt_txt": "2022-02-17 12:00:00"
+    },
+    {
+      "dt": 1645110000,
+      "main": {
+        "temp": 275.17,
+        "feels_like": 268.56,
+        "temp_min": 275.17,
+        "temp_max": 275.17,
+        "pressure": 997,
+        "sea_level": 997,
+        "grnd_level": 978,
+        "humidity": 99,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 804,
+          "main": "Clouds",
+          "description": "пасмурно",
+          "icon": "04n"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 10.79,
+        "deg": 186,
+        "gust": 20.55
+      },
+      "visibility": 7238,
+      "pop": 0,
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2022-02-17 15:00:00"
+    },
+    {
+      "dt": 1645120800,
+      "main": {
+        "temp": 275.6,
+        "feels_like": 268.81,
+        "temp_min": 275.6,
+        "temp_max": 275.6,
+        "pressure": 993,
+        "sea_level": 993,
+        "grnd_level": 975,
+        "humidity": 91,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 804,
+          "main": "Clouds",
+          "description": "пасмурно",
+          "icon": "04n"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 12.01,
+        "deg": 184,
+        "gust": 22.39
+      },
+      "visibility": 10000,
+      "pop": 0.05,
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2022-02-17 18:00:00"
+    },
+    {
+      "dt": 1645131600,
+      "main": {
+        "temp": 274.82,
+        "feels_like": 268.18,
+        "temp_min": 274.82,
+        "temp_max": 274.82,
+        "pressure": 992,
+        "sea_level": 992,
+        "grnd_level": 974,
+        "humidity": 99,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 500,
+          "main": "Rain",
+          "description": "небольшой дождь",
+          "icon": "10n"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 10.49,
+        "deg": 195,
+        "gust": 19.79
+      },
+      "visibility": 38,
+      "pop": 1,
+      "rain": {
+        "3h": 1.02
+      },
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2022-02-17 21:00:00"
+    },
+    {
+      "dt": 1645142400,
+      "main": {
+        "temp": 274.85,
+        "feels_like": 269.5,
+        "temp_min": 274.85,
+        "temp_max": 274.85,
+        "pressure": 992,
+        "sea_level": 992,
+        "grnd_level": 973,
+        "humidity": 99,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 500,
+          "main": "Rain",
+          "description": "небольшой дождь",
+          "icon": "10n"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 6.8,
+        "deg": 191,
+        "gust": 14.1
+      },
+      "visibility": 65,
+      "pop": 1,
+      "rain": {
+        "3h": 0.38
+      },
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2022-02-18 00:00:00"
+    },
+    {
+      "dt": 1645153200,
+      "main": {
+        "temp": 274.46,
+        "feels_like": 270.07,
+        "temp_min": 274.46,
+        "temp_max": 274.46,
+        "pressure": 992,
+        "sea_level": 992,
+        "grnd_level": 973,
+        "humidity": 100,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 500,
+          "main": "Rain",
+          "description": "небольшой дождь",
+          "icon": "10n"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 4.65,
+        "deg": 189,
+        "gust": 9.35
+      },
+      "visibility": 38,
+      "pop": 0.83,
+      "rain": {
+        "3h": 0.88
+      },
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2022-02-18 03:00:00"
+    },
+    {
+      "dt": 1645164000,
+      "main": {
+        "temp": 273.54,
+        "feels_like": 269.84,
+        "temp_min": 273.54,
+        "temp_max": 273.54,
+        "pressure": 992,
+        "sea_level": 992,
+        "grnd_level": 973,
+        "humidity": 100,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 601,
+          "main": "Snow",
+          "description": "снег",
+          "icon": "13d"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 3.33,
+        "deg": 206,
+        "gust": 7.68
+      },
+      "visibility": 23,
+      "pop": 1,
+      "snow": {
+        "3h": 3.52
+      },
+      "sys": {
+        "pod": "d"
+      },
+      "dt_txt": "2022-02-18 06:00:00"
+    },
+    {
+      "dt": 1645174800,
+      "main": {
+        "temp": 274.28,
+        "feels_like": 269.48,
+        "temp_min": 274.28,
+        "temp_max": 274.28,
+        "pressure": 995,
+        "sea_level": 995,
+        "grnd_level": 976,
+        "humidity": 100,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 600,
+          "main": "Snow",
+          "description": "небольшой снег",
+          "icon": "13d"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 5.31,
+        "deg": 251,
+        "gust": 10.69
+      },
+      "visibility": 30,
+      "pop": 0.75,
+      "snow": {
+        "3h": 1.38
+      },
+      "sys": {
+        "pod": "d"
+      },
+      "dt_txt": "2022-02-18 09:00:00"
+    },
+    {
+      "dt": 1645185600,
+      "main": {
+        "temp": 274.03,
+        "feels_like": 269.15,
+        "temp_min": 274.03,
+        "temp_max": 274.03,
+        "pressure": 998,
+        "sea_level": 998,
+        "grnd_level": 979,
+        "humidity": 99,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 804,
+          "main": "Clouds",
+          "description": "пасмурно",
+          "icon": "04d"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 5.33,
+        "deg": 263,
+        "gust": 10.19
+      },
+      "visibility": 132,
+      "pop": 0.71,
+      "sys": {
+        "pod": "d"
+      },
+      "dt_txt": "2022-02-18 12:00:00"
+    },
+    {
+      "dt": 1645196400,
+      "main": {
+        "temp": 273.7,
+        "feels_like": 268.7,
+        "temp_min": 273.7,
+        "temp_max": 273.7,
+        "pressure": 1002,
+        "sea_level": 1002,
+        "grnd_level": 983,
+        "humidity": 86,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 804,
+          "main": "Clouds",
+          "description": "пасмурно",
+          "icon": "04n"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 5.4,
+        "deg": 275,
+        "gust": 9.36
+      },
+      "visibility": 10000,
+      "pop": 0,
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2022-02-18 15:00:00"
+    },
+    {
+      "dt": 1645207200,
+      "main": {
+        "temp": 273.71,
+        "feels_like": 269.18,
+        "temp_min": 273.71,
+        "temp_max": 273.71,
+        "pressure": 1005,
+        "sea_level": 1005,
+        "grnd_level": 986,
+        "humidity": 93,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 804,
+          "main": "Clouds",
+          "description": "пасмурно",
+          "icon": "04n"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 4.58,
+        "deg": 248,
+        "gust": 9.61
+      },
+      "visibility": 10000,
+      "pop": 0,
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2022-02-18 18:00:00"
+    },
+    {
+      "dt": 1645218000,
+      "main": {
+        "temp": 273.53,
+        "feels_like": 269.17,
+        "temp_min": 273.53,
+        "temp_max": 273.53,
+        "pressure": 1007,
+        "sea_level": 1007,
+        "grnd_level": 988,
+        "humidity": 93,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 804,
+          "main": "Clouds",
+          "description": "пасмурно",
+          "icon": "04n"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 4.24,
+        "deg": 248,
+        "gust": 9.13
+      },
+      "visibility": 10000,
+      "pop": 0,
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2022-02-18 21:00:00"
+    },
+    {
+      "dt": 1645228800,
+      "main": {
+        "temp": 272.18,
+        "feels_like": 267.78,
+        "temp_min": 272.18,
+        "temp_max": 272.18,
+        "pressure": 1010,
+        "sea_level": 1010,
+        "grnd_level": 990,
+        "humidity": 94,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 804,
+          "main": "Clouds",
+          "description": "пасмурно",
+          "icon": "04n"
+        }
+      ],
+      "clouds": {
+        "all": 92
+      },
+      "wind": {
+        "speed": 3.85,
+        "deg": 238,
+        "gust": 8.41
+      },
+      "visibility": 10000,
+      "pop": 0,
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2022-02-19 00:00:00"
+    },
+    {
+      "dt": 1645239600,
+      "main": {
+        "temp": 270.05,
+        "feels_like": 265.1,
+        "temp_min": 270.05,
+        "temp_max": 270.05,
+        "pressure": 1011,
+        "sea_level": 1011,
+        "grnd_level": 991,
+        "humidity": 94,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 803,
+          "main": "Clouds",
+          "description": "облачно с прояснениями",
+          "icon": "04n"
+        }
+      ],
+      "clouds": {
+        "all": 74
+      },
+      "wind": {
+        "speed": 3.95,
+        "deg": 213,
+        "gust": 10.03
+      },
+      "visibility": 10000,
+      "pop": 0,
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2022-02-19 03:00:00"
+    },
+    {
+      "dt": 1645250400,
+      "main": {
+        "temp": 271.4,
+        "feels_like": 265.57,
+        "temp_min": 271.4,
+        "temp_max": 271.4,
+        "pressure": 1010,
+        "sea_level": 1010,
+        "grnd_level": 991,
+        "humidity": 93,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 803,
+          "main": "Clouds",
+          "description": "облачно с прояснениями",
+          "icon": "04d"
+        }
+      ],
+      "clouds": {
+        "all": 55
+      },
+      "wind": {
+        "speed": 5.83,
+        "deg": 205,
+        "gust": 14.52
+      },
+      "visibility": 10000,
+      "pop": 0,
+      "sys": {
+        "pod": "d"
+      },
+      "dt_txt": "2022-02-19 06:00:00"
+    },
+    {
+      "dt": 1645261200,
+      "main": {
+        "temp": 274.21,
+        "feels_like": 267.79,
+        "temp_min": 274.21,
+        "temp_max": 274.21,
+        "pressure": 1008,
+        "sea_level": 1008,
+        "grnd_level": 989,
+        "humidity": 90,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 804,
+          "main": "Clouds",
+          "description": "пасмурно",
+          "icon": "04d"
+        }
+      ],
+      "clouds": {
+        "all": 98
+      },
+      "wind": {
+        "speed": 9.17,
+        "deg": 207,
+        "gust": 17.97
+      },
+      "visibility": 10000,
+      "pop": 0,
+      "sys": {
+        "pod": "d"
+      },
+      "dt_txt": "2022-02-19 09:00:00"
+    },
+    {
+      "dt": 1645272000,
+      "main": {
+        "temp": 273.85,
+        "feels_like": 266.85,
+        "temp_min": 273.85,
+        "temp_max": 273.85,
+        "pressure": 1006,
+        "sea_level": 1006,
+        "grnd_level": 987,
+        "humidity": 98,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 600,
+          "main": "Snow",
+          "description": "небольшой снег",
+          "icon": "13d"
+        }
+      ],
+      "clouds": {
+        "all": 99
+      },
+      "wind": {
+        "speed": 10.78,
+        "deg": 215,
+        "gust": 20.2
+      },
+      "visibility": 91,
+      "pop": 0.36,
+      "snow": {
+        "3h": 0.33
+      },
+      "sys": {
+        "pod": "d"
+      },
+      "dt_txt": "2022-02-19 12:00:00"
+    },
+    {
+      "dt": 1645282800,
+      "main": {
+        "temp": 274.29,
+        "feels_like": 267.64,
+        "temp_min": 274.29,
+        "temp_max": 274.29,
+        "pressure": 1005,
+        "sea_level": 1005,
+        "grnd_level": 986,
+        "humidity": 97,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 600,
+          "main": "Snow",
+          "description": "небольшой снег",
+          "icon": "13n"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 9.95,
+        "deg": 221,
+        "gust": 18.28
+      },
+      "visibility": 2399,
+      "pop": 0.81,
+      "snow": {
+        "3h": 0.48
+      },
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2022-02-19 15:00:00"
+    },
+    {
+      "dt": 1645293600,
+      "main": {
+        "temp": 274.6,
+        "feels_like": 268.34,
+        "temp_min": 274.6,
+        "temp_max": 274.6,
+        "pressure": 1005,
+        "sea_level": 1005,
+        "grnd_level": 986,
+        "humidity": 98,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 804,
+          "main": "Clouds",
+          "description": "пасмурно",
+          "icon": "04n"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 9.04,
+        "deg": 223,
+        "gust": 17.11
+      },
+      "visibility": 128,
+      "pop": 0.44,
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2022-02-19 18:00:00"
+    },
+    {
+      "dt": 1645304400,
+      "main": {
+        "temp": 274.81,
+        "feels_like": 268.88,
+        "temp_min": 274.81,
+        "temp_max": 274.81,
+        "pressure": 1005,
+        "sea_level": 1005,
+        "grnd_level": 986,
+        "humidity": 87,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 804,
+          "main": "Clouds",
+          "description": "пасмурно",
+          "icon": "04n"
+        }
+      ],
+      "clouds": {
+        "all": 88
+      },
+      "wind": {
+        "speed": 8.27,
+        "deg": 231,
+        "gust": 16.6
+      },
+      "visibility": 10000,
+      "pop": 0,
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2022-02-19 21:00:00"
+    },
+    {
+      "dt": 1645315200,
+      "main": {
+        "temp": 274.25,
+        "feels_like": 267.92,
+        "temp_min": 274.25,
+        "temp_max": 274.25,
+        "pressure": 1005,
+        "sea_level": 1005,
+        "grnd_level": 986,
+        "humidity": 74,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 802,
+          "main": "Clouds",
+          "description": "переменная облачность",
+          "icon": "03n"
+        }
+      ],
+      "clouds": {
+        "all": 49
+      },
+      "wind": {
+        "speed": 8.94,
+        "deg": 241,
+        "gust": 17.01
+      },
+      "visibility": 10000,
+      "pop": 0,
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2022-02-20 00:00:00"
+    },
+    {
+      "dt": 1645326000,
+      "main": {
+        "temp": 273.38,
+        "feels_like": 266.62,
+        "temp_min": 273.38,
+        "temp_max": 273.38,
+        "pressure": 1006,
+        "sea_level": 1006,
+        "grnd_level": 987,
+        "humidity": 78,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 801,
+          "main": "Clouds",
+          "description": "небольшая облачность",
+          "icon": "02n"
+        }
+      ],
+      "clouds": {
+        "all": 24
+      },
+      "wind": {
+        "speed": 9.4,
+        "deg": 245,
+        "gust": 17.31
+      },
+      "visibility": 10000,
+      "pop": 0,
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2022-02-20 03:00:00"
+    },
+    {
+      "dt": 1645336800,
+      "main": {
+        "temp": 273.24,
+        "feels_like": 266.43,
+        "temp_min": 273.24,
+        "temp_max": 273.24,
+        "pressure": 1007,
+        "sea_level": 1007,
+        "grnd_level": 988,
+        "humidity": 82,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 802,
+          "main": "Clouds",
+          "description": "переменная облачность",
+          "icon": "03d"
+        }
+      ],
+      "clouds": {
+        "all": 43
+      },
+      "wind": {
+        "speed": 9.42,
+        "deg": 247,
+        "gust": 16.63
+      },
+      "visibility": 10000,
+      "pop": 0,
+      "sys": {
+        "pod": "d"
+      },
+      "dt_txt": "2022-02-20 06:00:00"
+    },
+    {
+      "dt": 1645347600,
+      "main": {
+        "temp": 274.27,
+        "feels_like": 268.09,
+        "temp_min": 274.27,
+        "temp_max": 274.27,
+        "pressure": 1009,
+        "sea_level": 1009,
+        "grnd_level": 990,
+        "humidity": 86,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 804,
+          "main": "Clouds",
+          "description": "пасмурно",
+          "icon": "04d"
+        }
+      ],
+      "clouds": {
+        "all": 97
+      },
+      "wind": {
+        "speed": 8.51,
+        "deg": 261,
+        "gust": 14.36
+      },
+      "visibility": 10000,
+      "pop": 0,
+      "sys": {
+        "pod": "d"
+      },
+      "dt_txt": "2022-02-20 09:00:00"
+    },
+    {
+      "dt": 1645358400,
+      "main": {
+        "temp": 274.24,
+        "feels_like": 268.76,
+        "temp_min": 274.24,
+        "temp_max": 274.24,
+        "pressure": 1011,
+        "sea_level": 1011,
+        "grnd_level": 991,
+        "humidity": 91,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 804,
+          "main": "Clouds",
+          "description": "пасмурно",
+          "icon": "04d"
+        }
+      ],
+      "clouds": {
+        "all": 98
+      },
+      "wind": {
+        "speed": 6.71,
+        "deg": 252,
+        "gust": 12.8
+      },
+      "visibility": 10000,
+      "pop": 0,
+      "sys": {
+        "pod": "d"
+      },
+      "dt_txt": "2022-02-20 12:00:00"
+    },
+    {
+      "dt": 1645369200,
+      "main": {
+        "temp": 273.27,
+        "feels_like": 268.66,
+        "temp_min": 273.27,
+        "temp_max": 273.27,
+        "pressure": 1011,
+        "sea_level": 1011,
+        "grnd_level": 992,
+        "humidity": 90,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 803,
+          "main": "Clouds",
+          "description": "облачно с прояснениями",
+          "icon": "04n"
+        }
+      ],
+      "clouds": {
+        "all": 84
+      },
+      "wind": {
+        "speed": 4.54,
+        "deg": 235,
+        "gust": 10.25
+      },
+      "visibility": 10000,
+      "pop": 0,
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2022-02-20 15:00:00"
+    },
+    {
+      "dt": 1645380000,
+      "main": {
+        "temp": 272.2,
+        "feels_like": 267.46,
+        "temp_min": 272.2,
+        "temp_max": 272.2,
+        "pressure": 1011,
+        "sea_level": 1011,
+        "grnd_level": 992,
+        "humidity": 92,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 804,
+          "main": "Clouds",
+          "description": "пасмурно",
+          "icon": "04n"
+        }
+      ],
+      "clouds": {
+        "all": 92
+      },
+      "wind": {
+        "speed": 4.34,
+        "deg": 216,
+        "gust": 10.13
+      },
+      "visibility": 10000,
+      "pop": 0,
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2022-02-20 18:00:00"
+    },
+    {
+      "dt": 1645390800,
+      "main": {
+        "temp": 272.17,
+        "feels_like": 267.87,
+        "temp_min": 272.17,
+        "temp_max": 272.17,
+        "pressure": 1010,
+        "sea_level": 1010,
+        "grnd_level": 990,
+        "humidity": 93,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 804,
+          "main": "Clouds",
+          "description": "пасмурно",
+          "icon": "04n"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 3.72,
+        "deg": 200,
+        "gust": 8.79
+      },
+      "visibility": 10000,
+      "pop": 0,
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2022-02-20 21:00:00"
+    },
+    {
+      "dt": 1645401600,
+      "main": {
+        "temp": 272.52,
+        "feels_like": 268.29,
+        "temp_min": 272.52,
+        "temp_max": 272.52,
+        "pressure": 1008,
+        "sea_level": 1008,
+        "grnd_level": 988,
+        "humidity": 95,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 804,
+          "main": "Clouds",
+          "description": "пасмурно",
+          "icon": "04n"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 3.73,
+        "deg": 191,
+        "gust": 8.65
+      },
+      "visibility": 1155,
+      "pop": 0,
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2022-02-21 00:00:00"
+    },
+    {
+      "dt": 1645412400,
+      "main": {
+        "temp": 272.97,
+        "feels_like": 267.84,
+        "temp_min": 272.97,
+        "temp_max": 272.97,
+        "pressure": 1006,
+        "sea_level": 1006,
+        "grnd_level": 986,
+        "humidity": 97,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 600,
+          "main": "Snow",
+          "description": "небольшой снег",
+          "icon": "13n"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 5.29,
+        "deg": 206,
+        "gust": 11.4
+      },
+      "visibility": 314,
+      "pop": 0.93,
+      "snow": {
+        "3h": 0.73
+      },
+      "sys": {
+        "pod": "n"
+      },
+      "dt_txt": "2022-02-21 03:00:00"
+    },
+    {
+      "dt": 1645423200,
+      "main": {
+        "temp": 273.35,
+        "feels_like": 268.61,
+        "temp_min": 273.35,
+        "temp_max": 273.35,
+        "pressure": 1005,
+        "sea_level": 1005,
+        "grnd_level": 986,
+        "humidity": 96,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 600,
+          "main": "Snow",
+          "description": "небольшой снег",
+          "icon": "13d"
+        }
+      ],
+      "clouds": {
+        "all": 99
+      },
+      "wind": {
+        "speed": 4.79,
+        "deg": 206,
+        "gust": 9.19
+      },
+      "visibility": 4372,
+      "pop": 0.89,
+      "snow": {
+        "3h": 0.14
+      },
+      "sys": {
+        "pod": "d"
+      },
+      "dt_txt": "2022-02-21 06:00:00"
+    },
+    {
+      "dt": 1645434000,
+      "main": {
+        "temp": 273.86,
+        "feels_like": 269.5,
+        "temp_min": 273.86,
+        "temp_max": 273.86,
+        "pressure": 1005,
+        "sea_level": 1005,
+        "grnd_level": 986,
+        "humidity": 100,
+        "temp_kf": 0
+      },
+      "weather": [
+        {
+          "id": 804,
+          "main": "Clouds",
+          "description": "пасмурно",
+          "icon": "04d"
+        }
+      ],
+      "clouds": {
+        "all": 100
+      },
+      "wind": {
+        "speed": 4.37,
+        "deg": 216,
+        "gust": 8.76
+      },
+      "visibility": 57,
+      "pop": 0,
+      "sys": {
+        "pod": "d"
+      },
+      "dt_txt": "2022-02-21 09:00:00"
+    }
+  ],
+  "city": {
+    "id": 515012,
+    "name": "Орёл",
+    "coord": {
+      "lat": 52.9658,
+      "lon": 36.0803
+    },
+    "country": "RU",
+    "population": 324200,
+    "timezone": 10800,
+    "sunrise": 1644987102,
+    "sunset": 1645022887
+  }
+}

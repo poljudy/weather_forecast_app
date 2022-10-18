@@ -1,0 +1,1 @@
+Examples of responses from the Openweathermap service as json for testing.

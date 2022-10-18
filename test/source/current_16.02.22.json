@@ -1,0 +1,44 @@
+{
+  "coord": {
+    "lon": 36.0803,
+    "lat": 52.9658
+  },
+  "weather": [
+    {
+      "id": 803,
+      "main": "Clouds",
+      "description": "облачно с прояснениями",
+      "icon": "04d"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 270.78,
+    "feels_like": 265.56,
+    "temp_min": 270.78,
+    "temp_max": 270.78,
+    "pressure": 1021,
+    "humidity": 93,
+    "sea_level": 1021,
+    "grnd_level": 1001
+  },
+  "visibility": 10000,
+  "wind": {
+    "speed": 4.55,
+    "deg": 189,
+    "gust": 8.63
+  },
+  "clouds": {
+    "all": 82
+  },
+  "dt": 1645003830,
+  "sys": {
+    "country": "RU",
+    "sunrise": 1644987102,
+    "sunset": 1645022887
+  },
+  "timezone": 10800,
+  "id": 515012,
+  "name": "Орёл",
+  "cod": 200
+}
