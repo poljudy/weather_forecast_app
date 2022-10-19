@@ -6,7 +6,7 @@ class ImagePathWeather {
 
   static const String _root = 'assets/weather_icons';
 
-  static const packageName = 'open_weather_api';
+  static const packageName = 'weather_pack';
 
   /// Get path to weather icon.
   ///

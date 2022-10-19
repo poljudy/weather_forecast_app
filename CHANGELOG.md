@@ -1,3 +1,3 @@
 ## 0.0.1
 
-* initial release. Hi pub.dev
+* Initial development release. Hi pub.dev

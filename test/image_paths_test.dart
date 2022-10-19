@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:flutter_test/flutter_test.dart';
-import 'package:open_weather_api/src/utils/image_paths.dart';
+import 'package:test/test.dart';
+import 'package:weather_pack/src/utils/image_paths.dart';
 
 // ignore_for_file: require_trailing_commas
 
@@ -15,7 +15,7 @@ void main() {
   });
 
   test('${ImagePathWeather.packageName} is correct.', () async {
-    expect(ImagePathWeather.packageName, 'open_weather_api',
+    expect(ImagePathWeather.packageName, 'weather_pack',
         reason: 'Does not match current package name!');
   });
 }

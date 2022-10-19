@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:flutter_test/flutter_test.dart';
-import 'package:open_weather_api/open_weather_api.dart';
+import 'package:test/test.dart';
+import 'package:weather_pack/src/services/weather/all_weather_model.dart';
 
 // ignore_for_file: avoid_print
 

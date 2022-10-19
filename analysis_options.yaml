@@ -7,4 +7,5 @@ linter:
     always_use_package_imports: false
     no_default_cases: true
     prefer_single_quotes: true
+    sort_pub_dependencies: false
 #    public_member_api_docs: true

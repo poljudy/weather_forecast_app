@@ -2,7 +2,10 @@
 //
 // Use of this source code is governed by the license found in the LICENSE file.
 
-library open_weather_api; // todo corrected name
+/// The project is designed to obtain weather via the OpenWeatherMap API.
+///
+/// With handy features. :)
+library weather_pack;
 
 // ignore_for_file: directives_ordering
 

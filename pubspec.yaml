@@ -1,17 +1,18 @@
-name: open_weather_api
-description: This project helps in accessing the service [https://openweathermap.org/]
+name: weather_pack
+description: The project is designed to obtain weather via the OpenWeatherMap API. With handy features. :)
 version: 0.0.1
-#homepage:
+#homepage: // todo: ref at github
+#repository:  // todo: ref at github
+#issue_tracker: // todo: ref at github
 
 environment:
-  sdk: ">=2.17.0 <3.0.0"
+  sdk: ">=2.17.0 <3.0.0" # the lower bound is related to the mixin for Enum
 
 dependencies:
   http: ^0.13.5
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
+  test: ^1.21.6
 
   lint: ^1.10.0
 

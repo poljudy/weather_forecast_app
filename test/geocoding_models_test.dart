@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:flutter_test/flutter_test.dart';
-import 'package:open_weather_api/src/services/geocoding/place_geocode_model.dart';
-import 'package:open_weather_api/src/utils/languages.dart';
+import 'package:test/test.dart';
+import 'package:weather_pack/src/services/geocoding/place_geocode_model.dart';
+import 'package:weather_pack/src/utils/languages.dart';
 
 void main() {
   group('$PlaceGeocode', () {

@@ -78,7 +78,7 @@ Image getWeatherIcon(String weatherIcon) {
 Widget getWeatherIcon(WeatherCurrent weather) {
   return Image.asset(
     'assets/weather_icons/${weather.weatherIcon}.png', // icon path
-    package: 'open_weather_api', // name package
+    package: 'weather_pack', // name package
     filterQuality: FilterQuality.high, // optional
     errorBuilder: (c, e, s) => Text(e), // will return the widget in case of an error
   );
