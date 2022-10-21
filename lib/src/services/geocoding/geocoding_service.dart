@@ -43,6 +43,7 @@ class GeocodingService {
     required double longitude,
     int limit = 5,
   }) async {
+    // todo: include asserts
     return _httpRepo.getData(
       uri: _owmApi.uriLocationByCoordinates(latitude, longitude, limit: limit),
       builder: (dynamic data) => _castData(data),

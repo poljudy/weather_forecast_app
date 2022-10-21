@@ -1,9 +1,9 @@
 name: weather_pack
 description: The project is designed to obtain weather via the OpenWeatherMap API. With handy features. :)
 version: 0.0.1
-#homepage: // todo: ref at github
-#repository:  // todo: ref at github
-#issue_tracker: // todo: ref at github
+#homepage: https://github.com/PackRuble/weather_pack
+repository: https://github.com/PackRuble/weather_pack
+issue_tracker: https://github.com/PackRuble/weather_pack/issues
 
 environment:
   sdk: ">=2.17.0 <3.0.0" # the lower bound is related to the mixin for Enum

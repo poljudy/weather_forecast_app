@@ -6,7 +6,7 @@
 ![GitHub code size in bytes][code_size_badge]
 
 ## 🌦 weather_pack
-A quick way to try out your UI ready weather conditions.
+A quick way to get access to weather conditions.
 
 ---
 
@@ -37,7 +37,7 @@ Also, all platforms are supported.</li>
 ## Endpoints openweathermap.org
 Let's agree to designate _Openweathermap_ as _**OWM**_.
 
-Uses the following site endpoints [openweathermap.org](https://openweathermap.org/):
+The library uses the following site endpoints [openweathermap.org](https://openweathermap.org/):
 
 | Endpoint or Path                        | A class or method that uses this endpoint   | See more            |
 |-----------------------------------------|---------------------------------------------|---------------------|
@@ -70,8 +70,8 @@ Uses the following site endpoints [openweathermap.org](https://openweathermap.or
 
 1. Add dependency to your `pubspec.yaml`:
    ```yaml
-       dependencies:
-          weather_pack: <latest_version>
+   dependencies:
+     weather_pack: <latest_version>
     ```
 2. Run the command: `flutter pub get`
 3. Use in your code:
@@ -81,8 +81,7 @@ Uses the following site endpoints [openweathermap.org](https://openweathermap.or
 
 ## Getting Started
 
-The easiest way to get the current weather forecast
-
+The easiest way to get the current weather:
 ```dart
 Future<void> main() async {
   const api = 'YOUR_APIKEY'; // TODO: change to your Openweathermap APIkey
@@ -97,7 +96,6 @@ Future<void> main() async {
 ```
 
 You can also change the request language:
-
 ```dart
 final lang = WeatherLanguage.arabic;
 
@@ -161,6 +159,8 @@ According to OWM service ([See more](https://openweathermap.org/current#multi)):
 > 
 > Translation is applied for the `city name` and `description` fields.
 
+[//]: # (fixme: указать более подробно о том, где и на какие поля подействует lang)
+
 ## Usage weather service
 
 Now there are two weather models - `WeatherCurrent` and `WeatherOneCall`.
@@ -182,6 +182,15 @@ final WeatherCurrent current = await wService
 final WeatherOneCall onecall = await wService
     .oneCallWeatherByLocation(latitude: 52.374, longitude: 4.88969);
 ```
+
+##### _Why do you only use the weather search by coordinates?_
+
+According to the website OWM:
+> Please use Geocoder API if you need automatic convert city names and zip-codes to geo 
+> coordinates and the other way around.
+> 
+> Please note that built-in geocoder has been deprecated. Although it is still available for use, 
+> bug fixing and updates are no longer available for this functionality.
 
 ## Usage geocoding service
 `GeocodingService` is a service for easy location search when working with geographical names
@@ -287,7 +296,7 @@ Widget getWeatherIcon(WeatherCurrent weather) {
 ```
 
 By and large, you can use the best quality regardless of platform resolution by specifying `@4` to path:
-```dart
+```text
 'assets/weather_icons/@4/$weatherIcon.png'
 ```
 
@@ -314,8 +323,8 @@ void worksTestedAPIkey({
 
 Made with ♥ Enjoy it!
 
-
-<!--
+[//]: # (fixme: спонсоры, проблемы, баги, сайты, помощь и тд)
+<!-- 
 ## Sponsoring
 
 I'm working on my packages on my free-time, but I don't have as much time as I would. 
@@ -336,7 +345,7 @@ If you fixed a bug or implemented a feature, please send a [pull request][pr].
 [mit_license_badge]: https://img.shields.io/badge/license-MIT-green?style=plastic
 [mit_license]: https://github.com/PackRuble/weather_pack/blob/master/LICENSE
 [code_size_badge]: https://img.shields.io/github/languages/code-size/PackRuble/weather_pack?style=plastic
-[repo_star_badge]: https://img.shields.io/github/stars/PackRuble/weather_pack?style=social
+[repo_star_badge]: https://img.shields.io/github/stars/PackRuble/weather_pack?style=plastic
 [pub_badge]: https://img.shields.io/pub/v/weather_pack.svg?style=plastic
 [pub]: https://pub.dev/packages/weather_pack
 [buy_me_a_coffee]: https://www.buymeacoffee.com/<>
