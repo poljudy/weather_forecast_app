@@ -195,7 +195,8 @@ enum SideOfTheWorld {
       return south;
     }
 
-    if (deg == 22.5 || deg == 337.5) return north;
+    // todo testing all method
+    if (deg == 0.0 || deg == 22.5 || deg == 337.5 || deg == 360.0) return north;
     if (deg == 67.5 || deg == 112.5) return east;
     if (deg == 157.5 || deg == 202.5) return south;
     if (deg == 247.5 || deg == 292.5) return west;
