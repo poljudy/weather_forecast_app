@@ -166,6 +166,8 @@ enum SideOfTheWorld {
   final String abbr;
 
   /// The function of translation from degrees to the cardinal directions.
+  ///
+  /// The value must be in the range 0.0 ... 360.0
   static SideOfTheWorld fromDegrees(double deg) {
     assert(0.0 <= deg && deg <= 360.0);
 
@@ -195,7 +197,6 @@ enum SideOfTheWorld {
       return south;
     }
 
-    // todo testing all method
     if (deg == 0.0 || deg == 22.5 || deg == 337.5 || deg == 360.0) return north;
     if (deg == 67.5 || deg == 112.5) return east;
     if (deg == 157.5 || deg == 202.5) return south;
