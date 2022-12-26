@@ -1,11 +1,13 @@
-[//]: # (TODO <img height="100" src="assets/weather_icons/@4/10d.png" width="100"/>)
+![](assets/images/banner.png)
 
+[![telegram_badge]][telegram_link]
 [![pub_badge]][pub]
+[![repo_star_badge]][github_link]
 [![mit_license_badge]][mit_license]
-![GitHub Repo stars][repo_star_badge]
-![GitHub code size in bytes][code_size_badge]
+[![code_size_badge]][github_link]
 
 ## 🌦 weather_pack
+
 A quick way to get access to weather conditions.
 
 ---
@@ -34,7 +36,20 @@ Also, all platforms are supported.</li>
 </ol>
 </details>
 
+## Resources
+
+[//]: # (todo: хабр link RU)
+
+- folder [`example`](https://github.com/PackRuble/weather_pack/tree/master/example). 
+There is a simple example of how to use the basic functions of the package, as well as a console mini-application (RU) without using flutter;
+
+![](example/weather_in_console/assets/use_in_console.gif)
+
+Feel free to suggest materials for inclusion in this list ^_~
+
+
 ## Endpoints openweathermap.org
+
 Let's agree to designate _Openweathermap_ as _**OWM**_.
 
 The library uses the following site endpoints [openweathermap.org](https://openweathermap.org/):
@@ -52,19 +67,24 @@ The library uses the following site endpoints [openweathermap.org](https://openw
 [geocoding-direct]: https://openweathermap.org/api/geocoding-api#direct
 [geocoding-reverse]: https://openweathermap.org/api/geocoding-api#reverse
 
-## Table of Contents
 
-- [About the library](#🌦-weather_pack) 
-- [Endpoints openweathermap.org](#endpoints-openweathermap.org) 
-- [Installing](#installing) 
-- [Getting Started](#getting-started) 
-- [Usage weather service](#usage-weather-service) 
-- [Usage geocoding service](#usage-geocoding-service) 
-- [Usage units measure](#usage-units-measure)
-- [Usage weather icons](#usage-weather-icons)
-- [API key testing](#api-key-testing)
-- [Features in development](#features-in-development)
-- [Additional information](#additional-information)
+## Table of Contents
+<!-- TOC -->
+  * [🌦 weather_pack](#-weather_pack)
+  * [Resources](#resources)
+  * [Endpoints openweathermap.org](#endpoints-openweathermaporg)
+  * [Table of Contents](#table-of-contents)
+  * [Installing](#installing)
+  * [Getting Started](#getting-started)
+  * [Usage weather service](#usage-weather-service)
+  * [Usage geocoding service](#usage-geocoding-service)
+  * [Usage units measure](#usage-units-measure)
+  * [Usage weather icons](#usage-weather-icons)
+  * [API key testing](#api-key-testing)
+  * [Features in development](#features-in-development)
+  * [Additional information](#additional-information)
+<!-- TOC -->
+
 
 ## Installing
 
@@ -78,6 +98,7 @@ The library uses the following site endpoints [openweathermap.org](https://openw
    ```dart
    import 'package:weather_pack/weather_pack.dart';
    ```
+
 
 ## Getting Started
 
@@ -161,6 +182,7 @@ According to OWM service ([See more](https://openweathermap.org/current#multi)):
 
 [//]: # (fixme: указать более подробно о том, где и на какие поля подействует lang)
 
+
 ## Usage weather service
 
 Now there are two weather models - `WeatherCurrent` and `WeatherOneCall`.
@@ -172,7 +194,8 @@ Now there are two weather models - `WeatherCurrent` and `WeatherOneCall`.
 4. `List<WeatherDaily>`
 5. `List<WeatherAlert>`
 
-#### How to use?
+**How to use?**
+
 You can get the weather in the following way:
 
 ```dart
@@ -183,7 +206,7 @@ final WeatherOneCall onecall = await wService
     .oneCallWeatherByLocation(latitude: 52.374, longitude: 4.88969);
 ```
 
-##### _Why do you only use the weather search by coordinates?_
+**_Why do you only use the weather search by coordinates?_**
 
 According to the website OWM:
 > Please use Geocoder API if you need automatic convert city names and zip-codes to geo 
@@ -191,6 +214,7 @@ According to the website OWM:
 > 
 > Please note that built-in geocoder has been deprecated. Although it is still available for use, 
 > bug fixing and updates are no longer available for this functionality.
+
 
 ## Usage geocoding service
 `GeocodingService` is a service for easy location search when working with geographical names
@@ -201,27 +225,29 @@ and coordinates. Supports both the direct and reverse methods:
 
 You can find out more at this link: [Geocoding API OpenWeather](https://openweathermap.org/api/geocoding-api)
 
-#### How to use?
+**How to use?**
 
 Create `GeocodingService` in the following way:
 ```dart
 final String cityName = 'suggested location name';
 final String apiKey = 'your api key for OWM';
 
-final GeocodingService gService = await GeocodingService(apiKey);
+final GeocodingService gService = GeocodingService(apiKey);
 ```
 
 To find using place names use direct geocoding:
 ```dart
-final List<PlaceGeocode> places = gService.getLocationByCityName(cityName);
+final List<PlaceGeocode> places = await gService.getLocationByCityName(cityName);
 ```
 
 or use reverse geocoding
 ```dart
-final List<PlaceGeocode> places = gService.getLocationByCoordinates(latitude: 52.374, longitude: 4.88969);
+final List<PlaceGeocode> places = await gService.getLocationByCoordinates(latitude: 52.374, longitude: 4.88969);
 ```
 
+
 ## Usage units measure
+
 By default, all weather models, e.g. `WeatherCurrent`, have measurable values of type `double`.
 To display the data in a convenient format, it is necessary use the conversion method `value`
 or `valueToString`:
@@ -255,7 +281,7 @@ There are several units of measurement:
 | Pressure         | `Pressure`       | hectoPa, mbar, mmHg, kPa, atm, inHg | +          |
 | Cardinal points  | `SideOfTheWorld` | n, ne, e, se, s, sw, w, nw          | +(another) |
 
-**Tip**: The `SideOfTheWorld` enum contains a static method `fromDegrees()` for converting degrees
+💡 **Tip**: The `SideOfTheWorld` enum contains a static method `fromDegrees()` for converting degrees
 to cardinal directions.
 
 
@@ -267,11 +293,17 @@ Icons are stored locally in this package at the path `assets/weather_icons/`.
 They are ordered according to [Declaring resolution-aware image assets](https://docs.flutter.dev/development/ui/assets-and-images#resolution-aware).
 This reflects the following correspondences:
 
-`100*100 - in default(implied resolution @1), 200x200 - @2, 300x300 - @3, 400x400 - @4`
+```text
+100*100 - in default(implied resolution @1)
+200x200 - @2
+300x300 - @3
+400x400 - @4
+```
 
 with the preservation of image quality.
 
-#### How to use?
+**How to use?**
+
 Get the weather icon in a safe way:
 ```dart
 Image getWeatherIcon(String weatherIcon) {
@@ -303,7 +335,9 @@ By and large, you can use the best quality regardless of platform resolution by 
 [//]: # (TODO: add note - получить или прямиком из сервиса OWM)
 [//]: # (TODO: Получить статическим способом через `Enum`. А нужно ли?)
 
+
 ## API key testing
+
 It is possible to test the API key. 
 To do this, the `OWMApiTest` class has a method `isCorrectApiKey()`:
 ```dart
@@ -316,12 +350,15 @@ void worksTestedAPIkey({
 }
 ```
 
+
 ## Features in development
+
 1. [ ] Getting weather by location name (built-in geocoding).
+
 
 ## Additional information
 
-Made with ♥ Enjoy it!
+Made with ❤️. Enjoy it!
 
 [//]: # (fixme: спонсоры, проблемы, баги, сайты, помощь и тд)
 <!-- 
@@ -346,8 +383,17 @@ If you fixed a bug or implemented a feature, please send a [pull request][pr].
 [mit_license]: https://github.com/PackRuble/weather_pack/blob/master/LICENSE
 [code_size_badge]: https://img.shields.io/github/languages/code-size/PackRuble/weather_pack?style=plastic
 [repo_star_badge]: https://img.shields.io/github/stars/PackRuble/weather_pack?style=plastic
+[github_link]: https://github.com/PackRuble/weather_pack
 [pub_badge]: https://img.shields.io/pub/v/weather_pack.svg?style=plastic
 [pub]: https://pub.dev/packages/weather_pack
 [buy_me_a_coffee]: https://www.buymeacoffee.com/<>
 [issue]: https://github.com/PackRuble/weather_pack/issues
 [pr]: https://github.com/PackRuble/weather_pack/pulls
+[telegram_badge]: https://img.shields.io/badge/telegram-❤️-252850?style=plastic&logo=telegram
+[telegram_link]: https://t.me/+AkGV73kZi_Q1YTMy
+
+---
+
+<h6>
+🏷 tags: weather, openWeather, openweathermap, weather forecast, metcast, W/F, reverse/direct geocoding, units measure, temperature, pressure, speed 
+</h6>

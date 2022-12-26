@@ -1,7 +1,7 @@
 name: weather_pack
 description: The project is designed to obtain weather via the OpenWeatherMap API. With handy features. :)
 version: 0.0.1
-#homepage: https://github.com/PackRuble/weather_pack
+homepage: https://t.me/+AkGV73kZi_Q1YTMy
 repository: https://github.com/PackRuble/weather_pack
 issue_tracker: https://github.com/PackRuble/weather_pack/issues
 
@@ -12,10 +12,16 @@ dependencies:
   http: ^0.13.5
 
 dev_dependencies:
-  test: ^1.21.6
+  test: ^1.22.1
 
-  lint: ^1.10.0
+  lint: ^2.0.1
 
 flutter:
    assets:
     - assets/weather_icons/
+
+screenshots:
+  - description: 'LOGO'
+    path: assets/images/banner.png
+  - description: '(RU) This console mini-application shows how to use the package without flutter.'
+    path: example/weather_in_console/assets/use_in_console.gif
