@@ -1,4 +1,5 @@
-![](assets/images/banner.png)
+
+![](./assets/images/banner.png)
 
 [![telegram_badge]][telegram_link]
 [![pub_badge]][pub]

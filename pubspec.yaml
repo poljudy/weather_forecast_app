@@ -21,7 +21,7 @@ flutter:
     - assets/weather_icons/
 
 screenshots:
-  - description: 'LOGO'
+  - description: '<weather_pack> package banner'
     path: assets/images/banner.png
   - description: '(RU) This console mini-application shows how to use the package without flutter.'
     path: example/weather_in_console/assets/result_in_console.gif
