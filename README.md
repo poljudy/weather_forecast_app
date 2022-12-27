@@ -43,7 +43,7 @@ Also, all platforms are supported.</li>
 - folder [`example`](https://github.com/PackRuble/weather_pack/tree/master/example). 
 There is a simple example of how to use the basic functions of the package, as well as a console mini-application (RU) without using flutter;
 
-![](example/weather_in_console/assets/use_in_console.gif)
+![](example/weather_in_console/assets/result_in_console.gif)
 
 Feel free to suggest materials for inclusion in this list ^_~
 

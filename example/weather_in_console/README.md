@@ -1,6 +1,8 @@
 A sample command-line application designed to retrieve weather data 
 with an entrypoint in `bin/`, library code in `lib/`.
 
+![](assets/result_in_console.gif)
+
 <!--
 TODO: Подробный разбор данного приложения представлен здесь (RU):
 ![](ссылка на хабр)
