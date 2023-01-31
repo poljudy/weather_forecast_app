@@ -1,12 +1,12 @@
-A sample command-line application designed to retrieve weather data 
+A sample command-line application designed to retrieve weather data
 with an entrypoint in `bin/`, library code in `lib/`.
 
 ![](assets/result_in_console.gif)
 
-<!--
-TODO: Подробный разбор данного приложения представлен здесь (RU):
-![](ссылка на хабр)
--->
+A detailed analysis of this application is presented as an article and can be found here:
+
+* [![habr_badge]][habr_link]
+* [![medium_badge]][medium_link]
 
 You can start the application by using the command:
 ```shell
@@ -18,7 +18,10 @@ Compile into an executable file, e.g. `.exe`:
 dart compile exe bin/main.dart --define="API_WEATHER=YOUR_APIKEY"
 ```
 
-The block diagram of the application is shown below (RU):
+The block diagram of the application is shown below:
+
+<details><summary>In Russian (Click to open)</summary>
+
 ```mermaid
 %%{init: {'theme': 'forest'}}%%
 
@@ -27,28 +30,72 @@ flowchart TB
   
   Start -->
   computeCheckApiKey["Проверка api-ключа"] -->
-  checkApiKey{"Api-ключ корректный?"}
+  checkApiKey{{"Api-ключ корректный?"}}
   --false--> exit1["Стоп ( exit(1) )"] --> End
-   
+  
   checkApiKey
   --true--> inputPlace[/"Введите местоположение"/]
-  --> computeCheckInputPlace{"Проверка местоположения"}
-  --Пустой ввод--> inputPlaceAgain{"Местоположение не указано. Попробовать ещё раз?"} 
+  --> computeCheckInputPlace{{"Проверка местоположения"}}
+  --"Пустой ввод"--> inputPlaceAgain{{"Местоположение не указано. Попробовать ещё раз?"}}
   --false--> exit2["Стоп ( exit(0) )"] --> End
   
   inputPlaceAgain --true--> inputPlace
   
-  computeCheckInputPlace --Не найдено--> inputPlace
+  computeCheckInputPlace --"Не найдено"--> inputPlace
   
-  computeCheckInputPlace 
-  --Найдено--> selectDesiredPlace[/"Выберите подходящее место"/]
+  computeCheckInputPlace
+  --"Найдено"--> selectDesiredPlace[/"Выберите подходящее место"/]
   --> selectWeatherType[/"Выберите тип погодных данных"/]
   --"...получаем погодные данные..."--> printWeather[/"Отобразить полученные данные"/]
   
   printWeather -->
-  inputIsRepeat{Узнать для другого города?}
+  inputIsRepeat{{"Узнать для другого города?"}}
   --false--> exit3["Стоп ( exit(0) )"] --> End
   inputIsRepeat --true--> inputPlace
-
+  
 End(["Конец"])
 ```
+
+</details>
+
+```mermaid
+
+%%{init: {'theme': 'forest'}}%%
+
+graph TB
+  Start(["Start ( bin/main.dart )"])
+  
+  Start -->
+  computeCheckApiKey["Checking the api key"] -->
+  checkApiKey{{"Is the api key correct?"}}
+  --false--> exit1["Stop ( exit(1) )"] --> End
+   
+  checkApiKey
+  --true--> inputPlace[/"Enter a location"/]
+  --> computeCheckInputPlace{{"Location check"}}
+  --"Blank input"--> inputPlaceAgain{{"The location is not specified. Shall I try again?"}} 
+  --false--> exit2["Stop ( exit(0) )"] --> End
+  
+  inputPlaceAgain --true--> inputPlace
+  
+  computeCheckInputPlace --"Not found"--> inputPlace
+  
+  computeCheckInputPlace 
+  --"Found"--> selectDesiredPlace[/"Choose the right place"/]
+  --> selectWeatherType[/"Select the type of weather data"/]
+  --"...get weather data..."--> printWeather[/"Display the data obtained"/]
+  
+  printWeather -->
+  inputIsRepeat{{"Find out for another city?"}}
+  --false--> exit3["Stop ( exit(0) )"] --> End
+  inputIsRepeat --true--> inputPlace
+
+End(["EnD"])
+
+```
+
+<!---->
+[habr_badge]: https://img.shields.io/badge/habr-RU-F9DFCF?style=plastic&logo=habr
+[habr_link]: https://habr.com/ru/post/708854/
+[medium_badge]: https://img.shields.io/badge/medium-EN-C8A2C8?style=plastic&logo=medium
+[medium_link]: https://medium.com/@pack.ruble/how-to-create-a-console-application-in-dart-using-the-weather-pack-package-68ed814f1903

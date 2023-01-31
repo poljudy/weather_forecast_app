@@ -39,10 +39,10 @@ Also, all platforms are supported.</li>
 
 ## Resources
 
-[//]: # (todo: хабр link RU)
-
-- folder [`example`](https://github.com/PackRuble/weather_pack/tree/master/example). 
-There is a simple example of how to use the basic functions of the package, as well as a console mini-application (RU) without using flutter;
+* folder [`example`](https://github.com/PackRuble/weather_pack/tree/master/example). 
+There is a simple example of how to use the basic functions of the package, as well as a console mini-application without using flutter
+  * [![habr_badge]][habr_link]
+  * [![medium_badge]][medium_link]
 
 ![](example/weather_in_console/assets/result_in_console.gif)
 
@@ -392,6 +392,10 @@ If you fixed a bug or implemented a feature, please send a [pull request][pr].
 [pr]: https://github.com/PackRuble/weather_pack/pulls
 [telegram_badge]: https://img.shields.io/badge/telegram-❤️-252850?style=plastic&logo=telegram
 [telegram_link]: https://t.me/+AkGV73kZi_Q1YTMy
+[habr_badge]: https://img.shields.io/badge/habr-RU-F9DFCF?style=plastic&logo=habr
+[habr_link]: https://habr.com/ru/post/708854/
+[medium_badge]: https://img.shields.io/badge/medium-EN-C8A2C8?style=plastic&logo=medium
+[medium_link]: https://medium.com/@pack.ruble/how-to-create-a-console-application-in-dart-using-the-weather-pack-package-68ed814f1903
 
 ---
 
