@@ -5,8 +5,6 @@ with an entrypoint in `bin/`, library code in `lib/`.
 
 A detailed analysis of this application is presented as an article and can be found here:
 
-* [![habr_badge]][habr_link]
-* [![medium_badge]][medium_link]
 
 You can start the application by using the command:
 ```shell
@@ -93,9 +91,3 @@ graph TB
 End(["EnD"])
 
 ```
-
-<!---->
-[habr_badge]: https://img.shields.io/badge/habr-RU-F9DFCF?style=plastic&logo=habr
-[habr_link]: https://habr.com/ru/post/708854/
-[medium_badge]: https://img.shields.io/badge/medium-EN-C8A2C8?style=plastic&logo=medium
-[medium_link]: https://medium.com/@pack.ruble/how-to-create-a-console-application-in-dart-using-the-weather-pack-package-68ed814f1903
