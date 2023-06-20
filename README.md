@@ -1,12 +1,3 @@
-
-![](./assets/images/banner.png)
-
-[![telegram_badge]][telegram_link]
-[![pub_badge]][pub]
-[![repo_star_badge]][github_link]
-[![mit_license_badge]][mit_license]
-[![code_size_badge]][github_link]
-
 ## 🌦 weather_pack
 
 A quick way to get access to weather conditions.
@@ -41,8 +32,6 @@ Also, all platforms are supported.</li>
 
 * folder [`example`](https://github.com/PackRuble/weather_pack/tree/master/example). 
 There is a simple example of how to use the basic functions of the package, as well as a console mini-application without using flutter
-  * [![habr_badge]][habr_link]
-  * [![medium_badge]][medium_link]
 
 ![](example/weather_in_console/assets/result_in_console.gif)
 
@@ -71,19 +60,19 @@ The library uses the following site endpoints [openweathermap.org](https://openw
 
 ## Table of Contents
 <!-- TOC -->
-  * [🌦 weather_pack](#-weather_pack)
-  * [Resources](#resources)
-  * [Endpoints openweathermap.org](#endpoints-openweathermaporg)
-  * [Table of Contents](#table-of-contents)
-  * [Installing](#installing)
-  * [Getting Started](#getting-started)
-  * [Usage weather service](#usage-weather-service)
-  * [Usage geocoding service](#usage-geocoding-service)
-  * [Usage units measure](#usage-units-measure)
-  * [Usage weather icons](#usage-weather-icons)
-  * [API key testing](#api-key-testing)
-  * [Features in development](#features-in-development)
-  * [Additional information](#additional-information)
+- [🌦 weather\_pack](#-weather_pack)
+- [Resources](#resources)
+- [Endpoints openweathermap.org](#endpoints-openweathermaporg)
+- [Table of Contents](#table-of-contents)
+- [Installing](#installing)
+- [Getting Started](#getting-started)
+- [Usage weather service](#usage-weather-service)
+- [Usage geocoding service](#usage-geocoding-service)
+- [Usage units measure](#usage-units-measure)
+- [Usage weather icons](#usage-weather-icons)
+- [API key testing](#api-key-testing)
+- [Features in development](#features-in-development)
+- [Additional information](#additional-information)
 <!-- TOC -->
 
 
@@ -360,45 +349,3 @@ void worksTestedAPIkey({
 ## Additional information
 
 Made with ❤️. Enjoy it!
-
-[//]: # (fixme: спонсоры, проблемы, баги, сайты, помощь и тд)
-<!-- 
-## Sponsoring
-
-I'm working on my packages on my free-time, but I don't have as much time as I would. 
-If this package or any other package I created is helping you, please consider to sponsor me so 
-that I can take time to read the issues, fix bugs, merge pull requests and add features 
-to these packages.
-
-## Sponsors
-
-Feel free to contribute to this project.
-
-If you find a bug or want a feature, but don't know how to fix/implement it, 
-please fill an [issue][issue].  
-If you fixed a bug or implemented a feature, please send a [pull request][pr].
- -->
-
-<!-- Links -->
-[mit_license_badge]: https://img.shields.io/badge/license-MIT-green?style=plastic
-[mit_license]: https://github.com/PackRuble/weather_pack/blob/master/LICENSE
-[code_size_badge]: https://img.shields.io/github/languages/code-size/PackRuble/weather_pack?style=plastic
-[repo_star_badge]: https://img.shields.io/github/stars/PackRuble/weather_pack?style=plastic
-[github_link]: https://github.com/PackRuble/weather_pack
-[pub_badge]: https://img.shields.io/pub/v/weather_pack.svg?style=plastic
-[pub]: https://pub.dev/packages/weather_pack
-[buy_me_a_coffee]: https://www.buymeacoffee.com/<>
-[issue]: https://github.com/PackRuble/weather_pack/issues
-[pr]: https://github.com/PackRuble/weather_pack/pulls
-[telegram_badge]: https://img.shields.io/badge/telegram-❤️-252850?style=plastic&logo=telegram
-[telegram_link]: https://t.me/+AkGV73kZi_Q1YTMy
-[habr_badge]: https://img.shields.io/badge/habr-RU-F9DFCF?style=plastic&logo=habr
-[habr_link]: https://habr.com/ru/post/708854/
-[medium_badge]: https://img.shields.io/badge/medium-EN-C8A2C8?style=plastic&logo=medium
-[medium_link]: https://medium.com/@pack.ruble/how-to-create-a-console-application-in-dart-using-the-weather-pack-package-68ed814f1903
-
----
-
-<h6>
-🏷 tags: weather, openWeather, openweathermap, weather forecast, metcast, W/F, reverse/direct geocoding, units measure, temperature, pressure, speed 
-</h6>
